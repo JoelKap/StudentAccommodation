@@ -1,0 +1,38 @@
+﻿<md-dialog style="min-width:50%">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Create Role</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeModal()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content class="md-padding">
+        <form name="createRole">
+            <div layout-gt-md="row" layout-md="column" class="margin-bottom-16">
+                <div flex>
+                    <md-input-container>
+                        <label>Role Name</label>
+                        <input name="roleName" type="text" ng-model="role.roleName" ng-blur="checkUniqueness(role)" required ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                        <div ng-messages="createRole.roleName.$error" ng-if="createRole.roleName.$dirty || formSubmitted">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            <div ng-if="roleNameIsNotUnique">This Role name already exists</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="50" layout="column" layout-align="start start">
+                    <md-button class="md-raised" ng-click="canceld()">Cancel</md-button>
+                </div>
+                <div flex="50" layout="row" layout-align="end end">
+                    <md-button class="md-raised md-primary" ng-if="isRoleEdit == false" ng-click="add(role)">Add Role</md-button>
+                    <md-button class="md-raised md-primary" ng-if="isRoleEdit == true" ng-click="edit(role)">Update Role</md-button>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+</md-dialog>

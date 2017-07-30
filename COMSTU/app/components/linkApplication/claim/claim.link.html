@@ -1,0 +1,35 @@
+﻿<md-dialog style="min-width:50%">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Customer Search</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeModal()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <form name="linkClaim">
+            <md-content class="md-padding" layout="row" layout-align="start start">
+                <md-icon flex="initial" md-font-icon="material-icons margin-right-16" class="material-icons">search</md-icon>
+                <md-input-container flex>
+                    <label>Search Customer</label>
+                    <input name="customerSearch" type="search" ng-model="customerSearch"/>
+                </md-input-container>
+            </md-content>
+            <md-data-table-container>
+                <table md-data-table>
+                    <tbody>
+                        <tr ng-click="selectCustomer(customer)" class="hover" ng-repeat="customer in customers | orderBy: pagenation.order | filter: customerSearch | limitTo: pagenation.limit : (pagenation.page -1) * pagenation.limit">
+                            <td>
+                                <p>{{customer.customerName}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <md-data-table-pagination md-limit="pagenation.limit" md-page="pagenation.page" md-total="{{customers.length}}" md-page-select="true"></md-data-table-pagination>
+            </md-data-table-container>
+        </form>
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,25 @@
+﻿<div class="contact">
+    <div class="container">
+        <div class="contact-grids">
+            <div class="contact-grid">
+                <div class="container">
+                    <h3 class="title">Register Landlord</h3>
+                    <p>Complete the short form below & we will contact you with availability.</p>
+                </div>
+                <p></p>
+                <br />
+                <form style="padding-left: 20%;padding-right: 25%;">
+                    <input type="text" ng-model="vm.userl.name" onfocus="this.value = '';" required="" placeholder="Name">
+                    <input type="text" ng-model="vm.userl.surname" onfocus="this.value = '';" required="" placeholder="Surname">
+                    <input type="text" ng-model="vm.userl.cellphone" onfocus="this.value = '';" required="" placeholder="Cellphone">
+                    <input type="text" ng-model="vm.userl.saId" onfocus="this.value = '';" required="" placeholder="SAID/Passport">
+                    <input type="text" ng-model="vm.userl.email" onfocus="this.value = '';" required="" placeholder="Email">
+                    <input type="text" ng-model="vm.userl.password" onfocus="this.value = '';" required="" placeholder="Password">
+                    <input type="text" ng-model="vm.userl.careTakerName" onfocus="this.value = '';" placeholder="Care taker fullname">
+                    <input type="submit" ng-click="vm.register(vm.userl)" value="Register" ng-disabled="vm.isClicked">
+                </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+    </div>
+</div>

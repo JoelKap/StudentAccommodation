@@ -1,0 +1,38 @@
+﻿<dir-page-header heading="vm.heading"
+                 icon="vm.icon"
+                 show-search="true"
+                 show-new-button="true" 
+                 add-new-button-function="vm.addNewUser()">
+</dir-page-header>
+<md-content class="main-content md-padding page-content transparent md-fade-in">
+    <md-content class="box-shadow">
+        <md-data-table-container>
+            <table md-data-table md-progress="deferred">
+                <thead md-head md-order="userSorting" class="ng-isolate-scope">
+                    <tr md-row>
+                        <th md-column name="Surname" order-by="surname"></th>
+                        <th md-column name="Name" order-by="name"></th>
+                        <th md-column name="Username" order-by="username"></th>
+                        <th md-column name="Identifiction"></th>
+                        <th md-column name="Status" order-by="status"></th>
+                        <th md-column name="Locked" order-by="locked"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in vm.users | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit | orderBy: userSorting track by $index" class="hover" ng-click="vm.editUser(user)">
+                        <td>{{user.surname}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.idNumber}}</td>
+                        <td ng-if="user.status === false" class="md-table-status false"><p>Inactive</p></td>
+                        <td ng-if="user.status === true" class="md-table-status true"><p>Active</p></td>
+                        <td layout-align="end end">
+                            <md-icon md-font-icon="material-icons" ng-show="user.locked" class="md-font material-icons">lock</md-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-data-table-container>
+        <md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.users.length}}"></md-data-table-pagination>
+    </md-content>
+</md-content>

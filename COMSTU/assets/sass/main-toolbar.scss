@@ -1,0 +1,244 @@
+﻿.md-toolbar-custom-header{
+    background: url(../img/header-toolbar-bg.jpg) no-repeat center center;
+    background-size: cover;
+    height: 210px;
+    min-height: 210px;
+    max-height: 210px;
+    @media only screen and (max-width: 600px) and (min-width: 0) and (orientation: portrait) {
+        height: 180px;
+        min-height: 180px;
+        max-height: 180px;
+        }
+    .md-toolbar-tools:nth-child(1){
+        @media (min-width: 1279px){
+            padding: 0 16px 0 0;
+        }
+        
+    }
+    .md-toolbar-tools{
+        @media only screen and (max-width: 600px) and (min-width: 0) and (orientation: portrait) {
+            height: 64px; 
+            max-height: 64px; 
+        }
+    }
+
+    .header-tabs{
+        margin-top: 34px;
+        padding: 19px 0 0 0;
+        @media only screen and (max-width: 600px) and (min-width: 0) and (orientation: portrait) {
+            padding-top: 3px;
+            md-select{
+                margin: 10px 0 26px 0;
+                padding: 0 16px;
+                span{
+                    color: #fff;
+                }
+            }
+        }
+        button{
+            border-radius: 0;
+            padding: 1px 20px;
+            margin: 0;
+            transition: all 0.2s;
+            position: relative;
+            &::after {
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                width: 0;
+                height: 3px;
+                background-color: $ci-red;
+                content: "";
+                -webkit-transition: all 0.2s;
+                -moz-transition: all 0.2s;
+                -o-transition: all 0.2s;
+                transition: all 0.2s;
+            }
+            &:hover{
+                background-color: transparent;
+                color: $lighter-gray;
+                &::after {
+                    width: 100%;
+                }
+            }
+            &.md-active{
+                &::after {
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                width: 100%;
+                height: 3px;
+                background-color: $ci-red;
+                content: "";
+                
+                }
+            }
+            .md-badge{
+                margin-left: 8px;
+            }
+        }
+       
+    }
+    .md-main-custom-search{
+        .md-input{
+            color: $ci-white;
+            font-size: 13px;
+        }
+
+        md-chips {//Hide Show Classes
+               md-chips-wrap{
+                   height: 32px;
+               }
+            &.showSearch{
+                md-chips-wrap{
+                    width: 100%;
+                    overflow: visible;
+                    opacity: 1.0;
+
+                    -webkit-animation-timing-function: linear;
+                    -webkit-animation-duration: 250ms;
+                    -webkit-animation-name: fadeIn;
+
+                    -moz-animation-timing-function: linear;
+                    -moz-animation-duration: 250ms;
+                    -moz-animation-name: fadeIn;
+
+                    animation-timing-function: linear;
+                    animation-duration: 250ms;
+                    animation-name: fadeIn;
+
+                    @-webkit-keyframes fadeIn {
+                        0% { 
+                            opacity: 0.0;
+                            width: 0%;
+                        }
+                        50% { 
+                            opacity: 0.4; 
+                            width: 40%;
+                        }
+                        100% { 
+                            opacity: 1.0; 
+                            width: 100%;
+                        }
+                    }
+
+                    
+                } 
+            }
+            &.hideSearch{
+                md-chips-wrap{
+                    width: 0%;
+                    overflow: hidden;
+                    opacity: 0;
+                    @include transition(all 0.25s ease-out);
+                } 
+            }
+            md-chips-wrap{
+                width: 0%;
+                opacity: 0;
+                overflow: hidden;
+            } 
+        }
+
+        .md-chips {
+            font-size: 13px;
+            padding: 0 0 0px 3px;
+            
+            &.showSearch{
+                md-chips-wrap{
+                    width: 100%;
+                    overflow: visible;
+                    padding: 0;
+                } 
+            }
+
+            &.hideSearch{
+                md-chips-wrap{
+                    width: 0%;
+                    overflow: hidden;
+                    padding: 0 0 0px 3px;
+                } 
+            }
+
+            .md-chip-input-container {
+                padding: 0 12px 0 6px;
+            }
+            .md-chip-input-container,
+            .md-chip-input-container:not(:first-child) {
+                margin: 0px 8px 0 0;
+            }
+            &.md-focused{
+                box-shadow: 0 1px $ci-white;
+            }
+            .md-chip {
+                background-color: $light-gray;
+                cursor: default;
+                border-radius: 16px;
+                display: block;
+                height: 24px;
+                line-height: 23px;
+                margin: 4px 8px 0 0;
+                padding: 0px 24px 0 8px;
+                float: left;
+                box-sizing: border-box;
+                max-width: 100%;
+                position: relative;
+                .md-chip-content{
+                    color: $dark-gray;
+                }
+                &.md-focused{
+                    color: $dark-gray;
+                }
+                .md-chip-remove-container {
+                    width: 32px;
+                    height: 24px;
+                }
+                .md-chip-remove {
+                    width: 32px;
+                    height: 24px;
+                    md-icon {
+                        height: 14px;
+                        width: 14px;
+                        color: $dark-gray;
+                        &:hover{
+                            color: $darker-gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    time{
+        span{
+            &:first-child{
+
+            }
+            &:last-child{
+                font-size: 13px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.md-toolbar-custom-heading{
+    i{
+         margin-left: 5px;
+
+    }
+    h2{
+    font-weight: 600;
+    padding-left: 5px;
+        span{
+            font-weight: 200;
+        }
+    }    
+}
+
+.hide-menu-close{
+    @media (min-width: 1279px){
+        display: none;
+    }
+
+}

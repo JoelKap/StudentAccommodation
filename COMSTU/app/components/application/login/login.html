@@ -1,0 +1,41 @@
+﻿<div layout="row" layout-fill ng-keypress="($event.which === 13) ? vm.login() : 0">
+    <div flex-gt-md="70" flex-md="60" flex-sm="0" flex="0" layout-fill class="image-area"></div>
+    <div flex-gt-md="30" flex-md="40" flex-sm="100" flex="100" layout-fill class="input-area">
+        <!--ng-keydown="$event.which === 13 && vm.login()"-->
+        <div layout="column" class="md-padding layout-fill">
+            <div class="logo"></div>
+            <div>
+
+                <div layout="row">
+                    <md-icon flex="initial" md-font-icon="material-icons">person</md-icon>
+                    <md-input-container flex class="md-block">
+                        <label>Username</label>
+                        <input ng-model="vm.user.username" type="text" autocomplete="off" autocorrect="off" autocapitalize="none" name="{{vm.fieldNameUsername}}">
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+                    <md-icon flex="initial" md-font-icon="material-icons">lock</md-icon>
+                    <md-input-container flex class="md-block md-input-has-value">
+                        <label>Password</label>
+                        <input ng-model="vm.user.password" type="password" autocomplete="off" name="{{vm.fieldNamePassword}}">
+                    </md-input-container>
+                </div>
+
+                <div class="login-button" ng-click="vm.login()">
+                    <button class="button button-login">Login</button>
+                </div>
+
+            </div>
+
+            <p class="login-error" ng-if="vm.message">{{vm.message}}</p>
+
+            <div layout="row" layout-align="start end" class="login-copyright">
+                <p class="margin-bottom-0">© Copyright Bidvest Bank - All Rights Reserved</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

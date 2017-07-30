@@ -1,0 +1,128 @@
+﻿<dir-page-header heading="vm.heading"
+                 icon="vm.icon">
+</dir-page-header>
+
+<md-content class="main-content md-padding page-content transparent md-fade-in">
+    <md-toolbar class="md-toolbar-content-header">
+        <div class="md-toolbar-tools" layout="row" layout-align="center center">
+            <h2 ng-if="vm.isApplicationEdit == false">Create <strong>New Application</strong></h2>
+            <h2 ng-if="vm.isApplicationEdit == true">Edit <strong>Application</strong></h2>
+        </div>
+    </md-toolbar>
+    <md-content class="md-padding">
+        <form name="vm.createApplication">
+            <div layout-gt-md="row" layout-md="column" class="margin-bottom-32">
+                <div flex>
+                    <!-- Left Col -->
+                    <md-input-container class="md-block margin-bottom-16">
+                        <label>Application Name</label>
+                        <input name="applicationName" type="text" ng-disabled="vm.isApplicationEdit" ng-model="vm.application.Name" required ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                        <div ng-messages="vm.createApplication.applicationName.$error" ng-if="vm.createApplication.applicationName.$dirty || vm.formSubmitted" class="md-custom-message">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                        </div>
+                    </md-input-container>
+                    <md-card flex class="md-card-list" layout-fill ng-class="{'md-card-list-error' : vm.rolesError && vm.application.Roles.length < 1}">
+                        <md-toolbar>
+                            <div class="md-toolbar-tools">
+                                <p flex>Roles</p>
+                                <md-button class="md-icon-button" ng-click="vm.addRole()">
+                                    <md-icon md-font-icon="material-icons" class="md-font material-icons">add</md-icon>
+                                </md-button>
+                            </div>
+                        </md-toolbar>
+
+                        <div ng-if="vm.application.Roles.length < 1" layout-fill class="md-card-placeholder" layout="column" layout-align="center center" ng-click="vm.addRole()">
+                            <div><i md-font-icon="material-icons" class="md-font material-icons">add</i></div>
+                            <p ng-hide="vm.rolesError">Add <span>New Role</span></p>
+                            <p ng-show="vm.rolesError">A User Role<span> Is Required</span></p>
+                        </div>
+
+                        <md-data-table-container ng-if="vm.application.Roles.length >= 1">
+                            <table md-data-table md-progress="deferred">
+                                <thead></thead>
+                                <tbody>
+                                    <tr ng-repeat="Role in vm.application.Roles" track by $index" ng-dblClick="vm.editRole(Role)">
+                                        <td>{{Role.roleName}}</td>
+                                        <td class="md-table-button">
+                                            <md-button class="md-icon-button" ng-click="vm.editRole(Role)">
+                                                <md-icon md-font-icon="material-icons" class="md-font material-icons">mode_edit</md-icon>
+                                            </md-button>
+                                        </td>
+                                        <td class="md-table-button">
+                                            <md-button class="md-icon-button" ng-click="vm.deleteRole($index)">
+                                                <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
+                                            </md-button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </md-data-table-container>
+                    </md-card>
+                </div>
+                <div flex="5" hide-md></div><!-- gutter -->
+                <div flex>
+                    <!-- Right Col -->
+                    <md-input-container class="md-block margin-bottom-16">
+                        <label>Application Accronym</label>
+                        <input name="applicationAccronym" type="text" ng-disabled="vm.isApplicationEdit" ng-model="vm.application.Accronym" ng-blur="vm.checkAccronymIsUnique(vm.application);vm.checkAccronymIsUpperCase(vm.application)" required ng-minlength="1" ng-maxlength="10" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                        <div ng-messages="vm.createApplication.applicationAccronym.$error" ng-if="vm.createApplication.applicationAccronym.$dirty || vm.formSubmitted" class="md-custom-message">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">The field above must be between 1 and 10 characters long.</div>
+                            <div class="md-message" ng-if="!vm.accronymIsUnique">This accronym already exists</div>
+                            <div class="md-message" ng-if="!vm.accronymIsUpperCase">The letters in the accronym must all be uppercase</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-card flex class="md-card-list" layout-fill ng-class="{'md-card-list-error' : vm.claimsError  && vm.application.Claims.length < 1}">
+                        <md-toolbar>
+                            <div class="md-toolbar-tools">
+                                <p flex>Values</p>
+                                <md-button class="md-icon-button" ng-click="vm.addClaim()">
+                                    <md-icon md-font-icon="material-icons" class="md-font material-icons">add</md-icon>
+                                </md-button>
+                            </div>
+                        </md-toolbar>
+                        <md-data-table-container  ng-if="vm.application.Claims.length >= 1">
+                            <table md-data-table md-progress="deferred">
+                                <thead></thead>
+                                <tbody>
+                                    <tr ng-repeat="Claim in vm.application.Claims" track by $index">
+                                        <td>{{Claim.claimName}}</td>
+                                        <td class="md-table-button">
+                                            <md-button class="md-icon-button" ng-click="vm.editClaim(Claim)">
+                                                <md-icon md-font-icon="material-icons" class="md-font material-icons">mode_edit</md-icon>
+                                            </md-button>
+                                        </td>
+                                        <td class="md-table-button">
+                                            <md-button class="md-icon-button" ng-click="vm.deleteClaim($index)">
+                                                <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
+                                            </md-button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </md-data-table-container>
+
+                        <div ng-if="vm.application.Claims.length < 1" layout-fill class="md-card-placeholder" layout="column" layout-align="center center" ng-click="vm.addClaim()">
+                            <div><i md-font-icon="material-icons" class="md-font material-icons">add</i></div>
+                            <p ng-hide="vm.claimsError">Add <span>New Value</span></p>
+                            <p ng-show="vm.claimsError">A Value<span> Is Required</span></p>
+                        </div>
+
+                    </md-card>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="50" layout="column" layout-align="start start">
+                    <md-button class="md-raised" ng-click="vm.cancel()">Cancel</md-button>
+                </div>
+                <div flex="50" layout="row" layout-align="end end">
+                    <md-button class="md-raised md-primary" ng-if="vm.isApplicationEdit == false" ng-click="vm.add(vm.application)">Create</md-button>
+                    <md-button class="md-raised md-primary" ng-if="vm.isApplicationEdit == true" ng-click="vm.edit(vm.application)">Save</md-button>
+                </div>
+            </div>
+        </form>
+    </md-content>
+</md-content>

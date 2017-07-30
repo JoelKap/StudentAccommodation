@@ -1,0 +1,26 @@
+﻿<div class="single-page blog">
+    <div class="container">
+        <div class="col-md-8 single-page-left">
+            <div class="single-page-info">
+                <img ng-src="{{vm.accommodation.pictures}}" alt="Accommodation inmage" />
+                <h4>Comments</h4>
+                <p>{{vm.accommodation.comment}}</p>
+            </div>
+            <!--related-posts-->
+            <!--//related-posts-->
+        </div>
+        <div class="col-md-4 blog-right">
+            <h3>Details</h3>
+            <ul class="catgry">
+
+                <li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>{{vm.accommodation.name}}</></li>
+                <br />
+                <li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>{{vm.accommodation.description}}</li>
+            </ul>
+            <div class="more more2">
+                <a class="button-pipaluk button--inverted" style="cursor:pointer" ng-click="vm.bookForViewing(accommodation)">Book accommodation</a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>

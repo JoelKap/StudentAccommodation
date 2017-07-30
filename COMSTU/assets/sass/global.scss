@@ -1,0 +1,274 @@
+﻿//padding
+.padding-top-0{
+    padding-top: 0 !important;
+}
+.padding-bottom-0{
+    padding-bottom: 0 !important;
+}
+.padding-left-0{
+    padding-left: 0 !important;
+}  
+.padding-right-0{
+    padding-right: 0 !important;
+}
+.padding-none{
+    padding: 0 !important;
+}
+.no-padding{
+    padding: 0px;
+}
+.padding-top-8{
+    padding-top: 8px;
+}
+.padding-top-16{
+    padding-top: 16px;
+}
+.padding-top-32{
+    padding-top: 32px;
+}
+.padding-right-8{
+    padding-right: 8px;
+}
+.padding-right-16{
+    padding-right: 16px;
+}
+.padding-right-32{
+    padding-right: 32px;
+}
+.padding-bottom-8{
+    padding-bottom: 8px;
+}
+.padding-bottom-16{
+    padding-bottom: 16px;
+}
+.padding-bottom-32{
+    padding-bottom: 32px;
+}
+.padding-left-8{
+    padding-left: 8px;
+}
+.padding-left-16{
+    padding-left: 16px;
+}
+.padding-left-32{
+    padding-left: 32px;
+}
+//Margin 
+.no-margin{
+    margin: 0px;
+}
+.margin-top-0{
+    margin-top: 0px;
+}
+.margin-top-8{
+    margin-top: 8px;
+}
+.margin-top-16{
+    margin-top: 16px;
+}
+.margin-top-32{
+    margin-top: 32px;
+}
+.margin-right-0{
+    margin-right: 0px;
+}
+.margin-right-8{
+    margin-right: 8px;
+}
+.margin-right-16{
+    margin-right: 16px;
+}
+.margin-right-32{
+    margin-right: 32px;
+}
+.margin-bottom-0{
+    margin-bottom: 0px;
+}
+.margin-bottom-8{
+    margin-bottom: 8px;
+}
+.margin-bottom-16{
+    margin-bottom: 16px;
+}
+.margin-bottom-32{
+    margin-bottom: 32px;
+}
+.margin-left-0{
+    margin-left: 0px;
+}
+.margin-left-8{
+    margin-left: 8px;
+}
+.margin-left-16{
+    margin-left: 16px;
+}
+.margin-left-32{
+    margin-left: 32px;
+}
+//Color
+.layout-column-custom{
+    background-color: $light-gray;
+}
+.color-light-grey{
+    background: $light-gray !important;
+}
+.color-medium-grey{
+    color: $gray;
+}
+.transparent{
+    background: transparent !important;
+}
+
+.text-color-blue{
+    color: $ci-blue;
+}
+.text-color-red{
+    color: $ci-red;
+}
+
+//Hover
+
+.hover{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+//Placeholder Text
+md-input-container.md-default-theme, md-input-container label, md-input-container.md-default-theme, md-input-container .md-placeholder,md-select.md-default-theme, md-select .md-select-value.md-select-placeholder {
+    color: $dark-gray;
+}
+
+
+.dropdown-alignment{
+    padding-top: 25px;
+    &.md-input-has-value{
+        padding-top: 3px;
+    }
+}
+
+
+//input field bottom padding global override
+md-input-container {
+    padding-bottom: 16px;
+}
+
+
+//font alignment
+
+
+//general
+.md-font-align-center{
+    text-align: center;  
+}
+.md-font-align-right{
+    text-align: right;  
+}
+.md-font-align-left{
+    text-align: left;  
+}
+
+//xs
+.md-font-align-center-xs{ 
+    //align font to center @ less than 599px width
+    @media (max-width: 599px){
+        text-align: center;  
+    }
+}
+.md-font-align-right-xs{ 
+    //align font to right @ less than 599px width
+    @media (max-width: 599px){
+        text-align: right;  
+    }
+}
+.md-font-align-left-xs{ 
+    //align font to right @ less than 599px width
+    @media (max-width: 599px){
+        text-align: left;  
+    }
+}
+
+//gt-xs
+.md-font-align-center-gt-xs{
+    @media (min-width: 600px){
+        text-align: center;  
+    }
+}
+.md-font-align-right-gt-xs{
+    @media (min-width: 600px){
+        text-align: right;  
+    }
+}
+.md-font-align-right-gt-md{
+    @media (min-width: 960px){
+        text-align: right;  
+    }
+}
+
+//Button
+
+.md-button{
+    text-transform: capitalize;
+}
+
+
+//font
+
+label{
+    color: $dark-gray;
+}
+.md-font-weight-300{
+    font-weight: 300;
+}
+.md-font-weight-400{
+    font-weight: 400;
+}
+.md-font-weight-500{
+    font-weight: 500;
+}
+.md-font-weight-600{
+    font-weight: 600;
+}
+.md-font-weight-700{
+    font-weight: 600;
+}
+.md-font-weight-800{
+    font-weight: 600;
+}
+
+
+//font size
+.md-font-size-xs{
+    font-size: 0.8em;
+}
+.md-font-size-sm{
+    font-size: 0.9em;
+}
+
+//Remove Chrome Outline Focus
+:focus {
+    outline:none!important;
+}
+
+
+//overflow
+.md-hide-overflow{
+    overflow: hidden;
+}
+
+//remove autocompleat in Chrome
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    &:hover, &:focus, &:active{
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+}
+
+//show pagenation dropdown value
+md-data-table-pagination md-select-value .md-text.ng-binding {
+    overflow: visible;
+}

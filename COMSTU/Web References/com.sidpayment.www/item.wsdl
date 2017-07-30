@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Authentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sid_order_query">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sid_order_queryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sid_order_queryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbankmarkup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbankmarkupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getbankmarkupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbanksummarybreakdown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbanksummarybreakdownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getbanksummarybreakdownResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbanksummaryreport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbanksummaryreportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getbanksummaryreportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbillingtotals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getbillingtotalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getbillingtotalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getconsolidatedtransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getconsolidatedtransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getconsolidatedtransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getdashboards">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getdashboardsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getdashboardsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getmerchantterminals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getmerchantterminalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getmerchantterminalsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getMerchantURLInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getMerchantURLInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getMerchantURLInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getperiodreport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getperiodreportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getperiodreportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getsearchresults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_getsearchresultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_getsearchresultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactioncomparison">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactioncomparisonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_gettransactioncomparisonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactiondetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactiondetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_gettransactiondetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactionprogress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactionprogressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_gettransactionprogressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ws_gettransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ws_gettransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="sid_order_querySoapIn">
+    <wsdl:part name="parameters" element="tns:sid_order_query" />
+  </wsdl:message>
+  <wsdl:message name="sid_order_querySoapOut">
+    <wsdl:part name="parameters" element="tns:sid_order_queryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbankmarkupSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getbankmarkup" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbankmarkupSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getbankmarkupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbanksummarybreakdownSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getbanksummarybreakdown" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbanksummarybreakdownSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getbanksummarybreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbanksummaryreportSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getbanksummaryreport" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbanksummaryreportSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getbanksummaryreportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbillingtotalsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getbillingtotals" />
+  </wsdl:message>
+  <wsdl:message name="ws_getbillingtotalsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getbillingtotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getconsolidatedtransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getconsolidatedtransactions" />
+  </wsdl:message>
+  <wsdl:message name="ws_getconsolidatedtransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getconsolidatedtransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getdashboardsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getdashboards" />
+  </wsdl:message>
+  <wsdl:message name="ws_getdashboardsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getdashboardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getmerchantterminalsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getmerchantterminals" />
+  </wsdl:message>
+  <wsdl:message name="ws_getmerchantterminalsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getmerchantterminalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getMerchantURLInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getMerchantURLInformation" />
+  </wsdl:message>
+  <wsdl:message name="ws_getMerchantURLInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getMerchantURLInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getperiodreportSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getperiodreport" />
+  </wsdl:message>
+  <wsdl:message name="ws_getperiodreportSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getperiodreportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_getsearchresultsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_getsearchresults" />
+  </wsdl:message>
+  <wsdl:message name="ws_getsearchresultsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_getsearchresultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactioncomparisonSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_gettransactioncomparison" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactioncomparisonSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_gettransactioncomparisonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactiondetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_gettransactiondetails" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactiondetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_gettransactiondetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactionprogressSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_gettransactionprogress" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactionprogressSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_gettransactionprogressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:ws_gettransactions" />
+  </wsdl:message>
+  <wsdl:message name="ws_gettransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:ws_gettransactionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SidApiSoap">
+    <wsdl:operation name="Authentication">
+      <wsdl:input message="tns:AuthenticationSoapIn" />
+      <wsdl:output message="tns:AuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sid_order_query">
+      <wsdl:input message="tns:sid_order_querySoapIn" />
+      <wsdl:output message="tns:sid_order_querySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbankmarkup">
+      <wsdl:input message="tns:ws_getbankmarkupSoapIn" />
+      <wsdl:output message="tns:ws_getbankmarkupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbanksummarybreakdown">
+      <wsdl:input message="tns:ws_getbanksummarybreakdownSoapIn" />
+      <wsdl:output message="tns:ws_getbanksummarybreakdownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbanksummaryreport">
+      <wsdl:input message="tns:ws_getbanksummaryreportSoapIn" />
+      <wsdl:output message="tns:ws_getbanksummaryreportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbillingtotals">
+      <wsdl:input message="tns:ws_getbillingtotalsSoapIn" />
+      <wsdl:output message="tns:ws_getbillingtotalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getconsolidatedtransactions">
+      <wsdl:input message="tns:ws_getconsolidatedtransactionsSoapIn" />
+      <wsdl:output message="tns:ws_getconsolidatedtransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getdashboards">
+      <wsdl:input message="tns:ws_getdashboardsSoapIn" />
+      <wsdl:output message="tns:ws_getdashboardsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getmerchantterminals">
+      <wsdl:input message="tns:ws_getmerchantterminalsSoapIn" />
+      <wsdl:output message="tns:ws_getmerchantterminalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getMerchantURLInformation">
+      <wsdl:input message="tns:ws_getMerchantURLInformationSoapIn" />
+      <wsdl:output message="tns:ws_getMerchantURLInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getperiodreport">
+      <wsdl:input message="tns:ws_getperiodreportSoapIn" />
+      <wsdl:output message="tns:ws_getperiodreportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_getsearchresults">
+      <wsdl:input message="tns:ws_getsearchresultsSoapIn" />
+      <wsdl:output message="tns:ws_getsearchresultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactioncomparison">
+      <wsdl:input message="tns:ws_gettransactioncomparisonSoapIn" />
+      <wsdl:output message="tns:ws_gettransactioncomparisonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactiondetails">
+      <wsdl:input message="tns:ws_gettransactiondetailsSoapIn" />
+      <wsdl:output message="tns:ws_gettransactiondetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactionprogress">
+      <wsdl:input message="tns:ws_gettransactionprogressSoapIn" />
+      <wsdl:output message="tns:ws_gettransactionprogressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactions">
+      <wsdl:input message="tns:ws_gettransactionsSoapIn" />
+      <wsdl:output message="tns:ws_gettransactionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SidApiSoap" type="tns:SidApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentication">
+      <soap:operation soapAction="http://tempuri.org/Authentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sid_order_query">
+      <soap:operation soapAction="http://tempuri.org/sid_order_query" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbankmarkup">
+      <soap:operation soapAction="http://tempuri.org/ws_getbankmarkup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbanksummarybreakdown">
+      <soap:operation soapAction="http://tempuri.org/ws_getbanksummarybreakdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbanksummaryreport">
+      <soap:operation soapAction="http://tempuri.org/ws_getbanksummaryreport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbillingtotals">
+      <soap:operation soapAction="http://tempuri.org/ws_getbillingtotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getconsolidatedtransactions">
+      <soap:operation soapAction="http://tempuri.org/ws_getconsolidatedtransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getdashboards">
+      <soap:operation soapAction="http://tempuri.org/ws_getdashboards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getmerchantterminals">
+      <soap:operation soapAction="http://tempuri.org/ws_getmerchantterminals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getMerchantURLInformation">
+      <soap:operation soapAction="http://tempuri.org/ws_getMerchantURLInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getperiodreport">
+      <soap:operation soapAction="http://tempuri.org/ws_getperiodreport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getsearchresults">
+      <soap:operation soapAction="http://tempuri.org/ws_getsearchresults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactioncomparison">
+      <soap:operation soapAction="http://tempuri.org/ws_gettransactioncomparison" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactiondetails">
+      <soap:operation soapAction="http://tempuri.org/ws_gettransactiondetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactionprogress">
+      <soap:operation soapAction="http://tempuri.org/ws_gettransactionprogress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactions">
+      <soap:operation soapAction="http://tempuri.org/ws_gettransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SidApiSoap12" type="tns:SidApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentication">
+      <soap12:operation soapAction="http://tempuri.org/Authentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sid_order_query">
+      <soap12:operation soapAction="http://tempuri.org/sid_order_query" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbankmarkup">
+      <soap12:operation soapAction="http://tempuri.org/ws_getbankmarkup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbanksummarybreakdown">
+      <soap12:operation soapAction="http://tempuri.org/ws_getbanksummarybreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbanksummaryreport">
+      <soap12:operation soapAction="http://tempuri.org/ws_getbanksummaryreport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getbillingtotals">
+      <soap12:operation soapAction="http://tempuri.org/ws_getbillingtotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getconsolidatedtransactions">
+      <soap12:operation soapAction="http://tempuri.org/ws_getconsolidatedtransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getdashboards">
+      <soap12:operation soapAction="http://tempuri.org/ws_getdashboards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getmerchantterminals">
+      <soap12:operation soapAction="http://tempuri.org/ws_getmerchantterminals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getMerchantURLInformation">
+      <soap12:operation soapAction="http://tempuri.org/ws_getMerchantURLInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getperiodreport">
+      <soap12:operation soapAction="http://tempuri.org/ws_getperiodreport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_getsearchresults">
+      <soap12:operation soapAction="http://tempuri.org/ws_getsearchresults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactioncomparison">
+      <soap12:operation soapAction="http://tempuri.org/ws_gettransactioncomparison" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactiondetails">
+      <soap12:operation soapAction="http://tempuri.org/ws_gettransactiondetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactionprogress">
+      <soap12:operation soapAction="http://tempuri.org/ws_gettransactionprogress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ws_gettransactions">
+      <soap12:operation soapAction="http://tempuri.org/ws_gettransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SidApi">
+    <wsdl:port name="SidApiSoap" binding="tns:SidApiSoap">
+      <soap:address location="https://www.sidpayment.com/api/SidApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SidApiSoap12" binding="tns:SidApiSoap12">
+      <soap12:address location="https://www.sidpayment.com/api/SidApi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,32 @@
+﻿/*-------------------
+-------Colors--------
+---------------------*/
+
+$ci-blue: rgba(6,20,86,1.0);   
+$ci-light-blue: rgba(0,84,165,1.0);   
+$ci-red: rgba(239,65,65,1.0);   
+$ci-white: rgba(255,255,255,1.0); 
+$ci-dark: rgba(38,47,53,1.0);  
+
+/*------Gray------*/
+
+$lighter-gray: rgba(243,243,243,1.0);
+$light-gray: rgba(230,231,232,1.0);
+$gray: rgba(169, 169, 169,1.0);
+$dark-gray: rgba(103, 103, 103,1.0);
+$darker-gray: #403F3F;
+
+/*------Misc------*/
+
+$md-green: #29A03A;
+
+/*-------------------
+-----Transition------
+---------------------*/
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}

@@ -1,0 +1,880 @@
+﻿html, body{
+    background: $light-gray !important;
+}
+.inline-switch{
+    height: 80px;
+    label{
+        color: $dark-gray;
+        font-weight: 500;
+        padding-left: 5px;
+    }
+    md-switch{
+        margin-right: 0px;
+    }
+}
+
+.main-content{
+    padding: 30px 25px;
+
+}
+.md-toolbar-content-header{
+    min-height: 48px;
+    .md-toolbar-tools{
+        height: 48px;
+        .md-icon-button{
+            margin: 0;
+            border-radius: 0;
+            background: $ci-light-blue;
+            &:hover{
+                background: $ci-light-blue;
+            }
+        }
+    
+        .md-toolbar-switch{
+            md-switch{
+                &.md-checked.md-primary .md-bar {
+                    background-color: $gray;
+                }
+                &.md-checked.md-primary .md-thumb {
+                    background-color: $ci-red;
+                }
+            }
+            label{
+                margin: 0 8px 0 0;
+                font-size: 0.8em;
+                color: $light-gray;
+            }
+            p{
+                margin: 0;
+                font-size: 0.8em;
+                color: $light-gray;
+            }
+        }
+    }
+}
+.md-tabs-custom-heading{
+    md-tabs-wrapper{
+        background: $ci-blue;
+    }
+    .md-tab{
+        color: $gray;
+        &.md-active{
+            color: $light-gray;
+        }
+    }
+    md-ink-bar{
+        color: $ci-red;
+        background: $ci-red;
+        height: 3px;
+    }
+}
+md-content{
+    &.box-shadow{
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.md-primary-custom{
+
+    background-color: rgba(6,21,86,1.0);
+    &:not([disabled]):hover{
+        background-color: rgba(6,21,86,0.9);
+    }
+    .md-button[disabled] {
+        background-color: #E6E7E8;
+    }
+    span{
+        color: $ci-white;
+    }
+}
+
+
+//input styles
+
+.md-header-fab{
+    position: absolute;
+    right: 30px;
+    top: 183px;
+}
+
+
+.md-table-button{
+    width: 48px;
+    padding: 0!important;
+    button{
+        &:hover{
+            md-icon{
+                color: $ci-light-blue;
+            }
+        }
+    }
+}
+
+md-data-table-container{
+    p{
+        &.md-currency-circle {
+            width: 48px;
+            height: 48px;
+            padding: 0px;
+            text-align: center;
+            line-height: 47px;
+            font-weight: 700;
+            border-radius: 50%;
+            background-color: $light-gray;
+            color: $ci-light-blue;
+        }
+    }
+}
+
+.md-functions-dropdown-sm{
+    padding: 4px 0;
+    md-menu-item {
+        min-height: 30px;
+        height: 30px;
+        .md-button {
+            font-size: 14px;
+            text-align: left;
+            padding-left: 8px;
+            padding-right: 8px;
+            line-height: 30px;
+            min-height: 30px;
+            md-icon {
+                margin: auto 8px auto 0;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+md-dialog{
+    &.large{
+        min-width:85%;
+    }
+}
+
+
+.md-input-custom-heading{
+    font-size: 22px;
+    border-bottom: 1px solid #061556;
+    margin-bottom: 20px;
+    line-height: 36px;
+    color: $ci-blue;
+    strong{
+        font-weight: bold;  
+    }
+}
+
+.md-badge{
+    position: relative;
+    top: 3px;
+    border-radius: 50%;
+    height: 17px;
+    display: inline-block;
+    line-height: 16px;
+    width: 17px;
+    font-weight: bold;
+    margin-left: 3px;
+    background-color: $ci-red;
+
+    span{
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width:17px;
+        text-align: center;
+        font-size: 10px;
+    }
+}
+.md-custom-notice{
+    md-icon{
+        &.primary{
+            color: $ci-blue;
+        }
+        &.warn{
+            color: $ci-red;
+        }
+        &.approve{
+            color: $md-green;
+        }
+    }
+}
+
+
+.md-custom-notice-progress{
+    height: 2px;
+    .md-container {
+        height: 2px;
+    }
+
+}
+
+//table custom style
+tbody > tr:last-child{
+    td{
+border-bottom: 1px rgba(0, 0, 0, 0.12) solid;
+    }
+    
+}
+
+//custom datepicker input full width:
+.md-datepicker-custom{
+    margin: 14px 0px 0px 0px;
+    display: block;
+    .md-datepicker-button{
+        margin-left: -9px;
+        &:hover{
+            md-icon{
+                color: $ci-blue;
+            }            
+        }
+    }
+    .md-datepicker-input-container{
+        font-size: 17px;
+        display: block;
+        width: calc(100% - 50px);
+        float: right;
+        margin: 8px 5px 0px 0px;
+        .md-datepicker-input{
+            
+            color: $dark-gray;
+            &::-webkit-input-placeholder { /* Safari, Chrome and Opera */
+              color: $dark-gray;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+              color: $dark-gray;
+            }
+
+            &::-moz-placeholder { /* Firefox 19+ */
+              color: $dark-gray;
+            }
+
+            &:-ms-input-placeholder { /* IE 10+ */
+              color: $dark-gray
+            }
+
+            &::-ms-input-placeholder { /* Edge */
+              color: $dark-gray
+            }
+
+            &:placeholder-shown { /* Standard one last! */
+              color: $dark-gray;
+            }
+        }
+    }
+}
+
+
+.md-custom-button-tabs{
+        border-bottom: 1px solid $light-gray;
+        background-color: $lighter-gray;
+        .md-custom-button-label{
+            @media (max-width: 960px){
+                top: 38px;
+            }
+            position: absolute;
+            left: calc(50% - 10px);
+            top: 14px;
+            z-index: 1;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: red;
+            p{
+                margin: 0;
+                text-align: center;
+                width: 100%;
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+    .md-button {
+        @media (max-width: 960px){
+            border-right: none;
+            border-bottom: 1px solid $light-gray;
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+
+        border-radius: 0px;
+        padding: 6px 6px;
+        margin: 0px 0px;  
+        &.selected{
+            background: $ci-blue;
+            color: $ci-white;
+            font-weight: bold;
+            &[disabled]{
+                color: $ci-white!important;
+                font-weight: inherit;
+            }
+        }       
+    }
+}
+
+
+//toaster custom
+
+
+
+md-toast{
+    background-color: $ci-blue;
+    @media (min-width: 1200px){
+        max-width: 250px;
+    }
+    @media (min-width: 600px){
+        min-width: 250px;
+    }
+    .md-toast-content{
+        background-color: transparent !important;
+        font-weight: 200;
+    }
+}
+
+/*md-sidenav, md-backdrop {
+position: fixed !important;
+}
+md-backdrop ~ md-content {
+position: fixed;
+overflow: hidden;
+}*/ 
+
+
+// Headings
+
+.md-island-heding{
+    color: $darker-gray;
+    font-weight: 700;
+    -webkit-margin-before: 1.0em;
+    -webkit-margin-after: 1.0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    &.no-margin{
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+}
+.md-island-sub-heding{
+    color: $dark-gray;
+    font-weight: 600;
+    -webkit-margin-before: 1.0em;
+    -webkit-margin-after: 1.0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    &.no-margin{
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+}
+
+
+
+
+//Login Screen 
+
+.md-custom-login-container{
+    background: url("assets/img/city-wallpaper-47.jpg") no-repeat;
+    background-size: cover;
+}
+.md-output-row{
+    border-bottom: 1px solid $light-gray;
+    p{
+    font-size: 0.9em;
+    -webkit-margin-before: .4em;
+    -webkit-margin-after: .4em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    }
+    .header p{
+        font-weight: 700;
+        color: $dark-gray;
+    }
+    div:first-child:not(.header){
+        p{
+            font-weight: 600;
+            color: $gray;
+        }
+    }
+    div:last-child:not(.header){
+        p{
+            text-align: right;
+        }
+    }
+}
+
+.md-output-table{
+    div p:first-child{
+        border-bottom: solid 1px $light-gray;
+
+    }
+    div p{
+        padding-left:16px;
+    }
+    div:last-child{ 
+        border-right: none;
+    }
+    div{ 
+        border-right: solid 1px $light-gray;
+    }
+
+}
+
+
+
+//login styling
+.md-login{
+
+    .input-area{
+        background: url(../img/header-toolbar-bg.jpg) no-repeat center center;
+        background-size: inherit;
+        background-position: top center;
+        background-color: $ci-blue;
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+        .logo{
+            background: url(../img/login-bidvest-logo.png) no-repeat center center;
+            background-size: contain;
+            background-position: top center;
+            height: 45px;
+            min-height: 45px;
+            width: 85%;
+            display: block;
+            margin: 0 auto 6.0em auto;
+        }
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px $ci-blue inset;
+            -webkit-text-fill-color: $ci-white !important;
+            &:hover, &:focus, &:active{
+                -webkit-box-shadow: 0 0 0px 1000px $ci-blue inset;
+                -webkit-text-fill-color: $ci-white !important;
+            }
+        }
+        label{
+            color: #fff!important;
+            font-weight: 300;
+        }
+        md-input-container{
+            input{
+                color: rgb(255, 255, 255);
+                border-color: #fff;
+                &:focus{
+                    border-color: #fff;
+                }
+            }
+            md-icon{
+                color: #fff;
+            }
+        }
+        .login-error{
+            font-size: 0.8em;
+            margin-left: 40px;
+            text-align: center;
+            color: $ci-red;
+
+        }
+        md-icon {
+            color: #fff;
+            padding: 9px 11px 0px 5px;
+            font-size: 1.3em;
+        }
+        .login-button{
+                height: 40px;
+                margin: 16px 0 20px 0;
+            button{
+
+                float: left;
+                width: calc(100% - 40px);
+                margin-left: 40px;
+                display: block;
+                padding: .5em 1em;
+                border: none;
+                background: none;
+                color: #fff;
+                vertical-align: middle;
+                position: relative;
+                z-index: 1;
+                border: 1px solid #fff;
+
+            }
+            .button-login {
+	            overflow: hidden;
+	            -webkit-transition: border-color 0.3s, color 0.3s;
+	            transition: border-color 0.3s, color 0.3s;
+	            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            }
+            .button-login::before {
+	            content: '';
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            width: 150%;
+	            height: 100%;
+	            background: #37474f;
+	            z-index: -1;
+	            -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+	            transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+	            -webkit-transform-origin: 0% 100%;
+	            transform-origin: 0% 100%;
+	            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+	            transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+            }
+            .button-login:hover {
+	            color: #fff;
+	            border-color: #3f51b5;
+            }
+            .button-login.button-inverted:hover {
+	            color: #3f51b5;
+	            border-color: #fff;
+            }
+            .button-login:hover::before {
+	            opacity: 1;
+	            background-color: #3f51b5;
+	            -webkit-transform: rotate3d(0, 0, 1, 0deg);
+	            transform: rotate3d(0, 0, 1, 0deg);
+	            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            }
+            .button-login.button-inverted:hover::before {
+	            background-color: #fff;
+            }
+        }
+        .login-copyright{
+            height: 100%;
+            p{
+                color: $dark-gray;
+                font-size: 0.7em;
+            }
+        }
+    }
+    .image-area{
+        background: url("../img/login-background.png") no-repeat!important;
+        background-size: cover!important;
+    }
+    
+}
+.md-fab-button-position{
+    bottom: 6px;
+    right: 36px;
+    position: absolute;
+}
+.md-table-status{
+    p{
+        display: inherit;
+        color: $ci-white;
+        padding: 3px 6px;
+        border-radius: 6px;
+    }
+    &.false{
+        p{
+            background-color: $ci-red;
+        }       
+    }
+    &.true{
+        p{
+            background-color: $ci-light-blue;
+        }
+    }
+}
+md-data-table-container thead{
+    background-color: $lighter-gray;
+
+}
+
+//global message styling 
+md-input-container [ng-messages]{
+    position: absolute;
+}
+
+//card styling
+.md-application-cards{
+    md-card{
+        min-width: 300px;
+        min-height: 175px;
+        position: relative;
+        .md-action{
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            button{
+                background: $light-gray;
+                border-radius: 0px;
+                margin: 0;
+                &:hover{
+                    background-color: $light-gray!important;
+                    md-icon{
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+    .md-card-placeholder{
+        background: transparent;
+        border: 3px dashed $gray;
+        box-shadow: none;
+        transition: all .3s ease-in-out;
+            &:hover{
+                border-color: $dark-gray;
+                transition: all .3s ease-in-out;
+                cursor: pointer;
+            h3 i{
+                color: $dark-gray;
+                transition: all .3s ease-in-out;
+            }
+            p{
+                color: $dark-gray;
+                transition: all .3s ease-in-out;
+            }
+        }
+        h3 i{
+            font-size: 2.2em;
+            color: $gray;
+            transition: all .3s ease-in-out;
+        }
+        p{
+            span{
+                font-weight: 600;
+            }
+            font-size: 1.0em;
+            color: $gray;
+            transition: all .3s ease-in-out;
+        }
+    }    
+}
+
+//Create Application Cards
+
+.md-card-list{
+    min-height: 400px;
+    margin: 0px;
+    &.md-card-list-error {
+        box-shadow: 0px 1px 3px 0px rgba(255, 0, 0, 0.8), 0px 1px 1px 0px rgba(255, 0, 0, 0.8), 0px 2px 1px -1px rgba(255, 0, 0, 0.8);
+        .md-card-placeholder{
+            i,p{
+                color: $ci-red;
+            }
+            &:hover{
+                i,p{
+                    color: $ci-red !important;
+                }
+            }
+        }
+    }
+    md-toolbar{
+        color: $dark-gray;
+        background: $light-gray;
+        min-height: 38px;
+        padding: 0 8px 0 16px;
+        
+        .md-toolbar-tools{
+            height: 38px;
+            padding: 0;
+            p{
+                font-size: 0.8em;
+            }
+            .md-button{
+                background: $ci-blue;
+                border-radius: 0px;
+                line-height: 38px;
+                height: 38px;
+                width: 38px;
+                &:hover{
+                    background: $ci-blue;
+                }
+            }
+        }
+    }
+    .md-card-placeholder{
+        min-height: 330px;
+        &:hover{
+            cursor: pointer;
+            i, p{
+                color: $dark-gray;
+                transition: all .3s ease-in-out;
+            } 
+        }
+        div i{
+            font-size: 3.0em;
+            color: $gray;
+            transition: all .3s ease-in-out;
+        }
+        p{
+            span{
+                font-weight: 600;
+            }
+            margin-top: 0px;
+            font-size: 1.0em;
+            color: $gray;
+            transition: all .3s ease-in-out;
+        }
+    }
+}
+.md-message{
+    font-size: 12px;
+    line-height: 14px;
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+
+.md-404-error{
+    .md-404-icon{  
+        >div{
+            font-size: 9.5em;
+            color: rgba(169, 169, 169, 0.75);
+            text-shadow: 1px 4px 6px #E6E7E8, 0 0 0 #08141F, 0px 4px 6px #E6E7E8;
+            transition: all 0.4s ease-in-out;
+
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+    }
+    h2{
+        text-align: center;
+        font-size: 1.0em;
+        font-weight: 400;
+        color: rgba(169, 169, 169, 0.75);
+        text-shadow: 1px 4px 6px #E6E7E8, 0 0 0 #08141F, 0px 4px 6px #E6E7E8;
+        span{
+            font-size: 1.4em;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+    .md-404-back-btn{
+        padding: 0;
+        color: $gray;
+        font-size: 1em;
+        font-weight: 600;
+        transition: color 0.25s ease-in-out;
+        &:hover{
+            cursor: pointer;
+            color: $dark-gray;
+            transition: color 0.25s ease-in-out;
+        }
+        i{
+            float: left;
+            font-size: 1.45em;
+        }
+    }
+    @-webkit-keyframes bounceIn {
+        from, 20%, 40%, 60%, 80%, to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+        }
+        20% {
+            -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+        40% {
+            -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+        }
+        60% {
+            opacity: 1;
+            -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+        }
+        80% {
+            -webkit-transform: scale3d(.97, .97, .97);
+            transform: scale3d(.97, .97, .97);
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    @keyframes bounceIn {
+        from, 20%, 40%, 60%, 80%, to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+        0% {
+            opacity: 0;
+            -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+        }
+        20% {
+            -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+        40% {
+            -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+        }
+        60% {
+            opacity: 1;
+            -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+        }
+        80% {
+            -webkit-transform: scale3d(.97, .97, .97);
+            transform: scale3d(.97, .97, .97);
+        }
+        to {
+            opacity: 1;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    .bounceIn {
+        -webkit-animation-name: bounceIn;
+        animation-name: bounceIn;
+        -webkit-animation-duration: .75s;
+        animation-duration: .75s;
+    }    
+}
+
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.md-fade-in {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .45s;
+    animation-duration: .45s;
+}
+
+.md-alert-box{
+    md-dialog-content{
+        .md-alert-box-icon{
+            font-size: 40px;
+            color: $ci-red;
+            margin: 0 16px 0 0;
+        }
+    }
+
+}

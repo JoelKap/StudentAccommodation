@@ -1,0 +1,120 @@
+﻿<md-dialog ng-cloak class="large">
+    <md-toolbar class="color-blue md-title-header-bar" style="width:100%!important">
+        <div class="md-toolbar-tools">
+            <h2>Beneficiary</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeModal()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content class="md-padding">
+        <form name="captureBeneficiary" data-ng-init="loadedBenForm()">
+            <div layout-gt-md="row" layout-md="column">
+                <div flex>
+
+                    <md-input-container flex class="dropdown-alignment">
+                        <label>Select Package</label>
+                        <md-select ng-model="package" required name="accounts" ng-change="selectedPackage(package)">
+                            <md-option ng-value="package.name" ng-repeat="package in packages">
+                                {{package.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <!-- Left Col -->
+                    <md-input-container class="md-block">
+                        <label>First Name</label>
+                        <input ng-model="vm.beneficiary.firstName" required name="firstname" ng-pattern="/^[a-zA-Z0-9\s]*$/"/>
+                        <div ng-messages="captureBeneficiary.firstname.$error" ng-if="captureBeneficiary.firstname.$dirty">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Last Name</label>
+                        <input ng-model="vm.beneficiary.lastName" required name="lastname" ng-pattern="/^[a-zA-Z0-9\s]*$/"/>
+                        <div ng-messages="captureBeneficiary.lastname.$error" ng-if="captureBeneficiary.lastname.$dirty">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Id Number</label>
+                        <input ng-model="vm.beneficiary.idNumber" type="text" required name="idNumber" max="13" ng-pattern="/^[0-9.]*$/"/>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Cell Number</label>
+                        <input ng-model="vm.beneficiary.cellNumber" type="text" required name="cellnumber" max="10" ng-pattern="/^[0-9.]*$/"/>
+                    </md-input-container>
+
+                    <div flex>
+                        <!-- Right Col -->
+
+
+                    </div>
+                    <div flex="5" hide-md></div>
+
+                </div>
+                <div flex="5" hide-md></div><!-- gutter -->
+                <div flex>
+                    <!-- gutter -->
+
+                    <md-input-container flex>
+                        <label>username</label>
+                        <input type="text" ng-model="vm.beneficiary.username" required name="username"/>
+                        <div ng-messages="captureBeneficiary.username.$error" ng-if="captureBeneficiary.username.$dirty">
+                            <div ng-message="required">The field above is required</div>
+                        </div>
+                    </md-input-container>
+
+
+                    <md-input-container flex>
+                        <label>Password</label>
+                        <input type="password" ng-model="vm.beneficiary.password" required name="password"/>
+                        <div ng-messages="captureBeneficiary.password.$error" ng-if="captureBeneficiary.password.$dirty">
+                            <div ng-message="required">The field above is required</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container flex>
+                        <label>Repeat Password</label>
+                        <input type="password" ng-model="vm.beneficiary.repeatPassword" name="repeatPassword" ng-change="checkPasswordMatch()" />
+                        <div ng-messages="captureBeneficiary.repeatPassword.$error" ng-if="captureBeneficiary.repeatPassword.$dirty">
+                            <div ng-message="required">The field above is required</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container flex>
+                        <label>Notification Email</label>
+                        <input type="text" ng-model="vm.beneficiary.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                        <div ng-messages="captureBeneficiary.email.$error" ng-if="captureBeneficiary.email.$dirty">
+                            <div ng-message="required">The field above is required</div>
+                            <!--<div ng-message-exp="['pattern']">You cannot capture special characters</div>-->
+                        </div>
+                    </md-input-container>
+
+                    <!-- Right Col -->
+                    <md-input-container>
+                        <label>Bank Reference Number</label>
+                        <input type="text" ng-model="vm.beneficiary.bankReferenceNumber" value="43434343" disabled="disabled" name="referenceNumber"/>
+                    </md-input-container>
+
+                </div>
+            </div>
+            <md-content class="md-padding">
+                <div layout="row">
+                    <div flex="50" layout="column" layout-align="start start">
+                        <md-button class="md-raised md-default" ng-click="closeModal()">Cancel</md-button>
+                    </div>
+                    <div flex="50" layout="row" layout-align="end end">
+                        <md-button class="md-primary md-primary-custom" ng-click="createBeneficiaryModel(vm.beneficiary)">Save</md-button>
+                    </div>
+                </div>
+            </md-content>
+        </form>
+    </md-content>
+</md-dialog>

@@ -1,0 +1,157 @@
+﻿  <Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\app\app.js" />
+    <Content Include="wwwroot\app\common\login\login.controller.js" />
+    <Content Include="wwwroot\app\common\login\login.html" />
+    <Content Include="wwwroot\app\common\login\login.service.js" />
+    <Content Include="wwwroot\app\common\paymentError\paymentError.controller.js" />
+    <Content Include="wwwroot\app\common\paymentError\paymentError.html" />
+    <Content Include="wwwroot\app\common\paymentSucess\paymentSuccesful.controller.js" />
+    <Content Include="wwwroot\app\common\paymentSucess\paymentSuccesful.html" />
+    <Content Include="wwwroot\app\components\admin\admin.service.js" />
+    <Content Include="wwwroot\app\components\admin\adminAccountManagement\adminAccountManagement.controller.js" />
+    <Content Include="wwwroot\app\components\admin\adminAccountManagement\adminAccountManagement.html" />
+    <Content Include="wwwroot\app\components\admin\adminActivationAccommodation\adminActivation.controller.js" />
+    <Content Include="wwwroot\app\components\admin\adminActivationAccommodation\adminActivation.html" />
+    <Content Include="wwwroot\app\components\home\homeDetail\homeDetail.controller.js" />
+    <Content Include="wwwroot\app\components\home\homeDetail\homeDetail.html" />
+    <Content Include="wwwroot\app\components\home\homeServices.js" />
+    <Content Include="wwwroot\app\components\home\homeView.controller.js" />
+    <Content Include="wwwroot\app\components\home\homeView.html" />
+    <Content Include="wwwroot\app\components\landlord\accommodationProfile\accommodationManagement.controller.js" />
+    <Content Include="wwwroot\app\components\landlord\accommodationProfile\accommodationManagement.html" />
+    <Content Include="wwwroot\app\components\landlord\landlord.service.js" />
+    <Content Include="wwwroot\app\components\landlord\landlordProfile\landlordProfile.controller.js" />
+    <Content Include="wwwroot\app\components\landlord\landlordProfile\landlordProfile.html" />
+    <Content Include="wwwroot\app\components\register\register.controller.js" />
+    <Content Include="wwwroot\app\components\register\register.html" />
+    <Content Include="wwwroot\app\components\register\register.service.js" />
+    <Content Include="wwwroot\app\components\student\bookAccommodation\bookAccommodation.controller.js" />
+    <Content Include="wwwroot\app\components\student\bookAccommodation\bookAccommodation.html" />
+    <Content Include="wwwroot\app\components\student\registerlandlord\registerlandlord.controller.js" />
+    <Content Include="wwwroot\app\components\student\registerlandlord\registerlandlord.html" />
+    <Content Include="wwwroot\app\components\student\student.service.js" />
+    <Content Include="wwwroot\app\components\student\studentAccount\studentAccount.controller.js" />
+    <Content Include="wwwroot\app\components\student\studentAccount\studentAccount.html" />
+    <Content Include="wwwroot\app\components\student\studentProfile\studentProfile.controller.js" />
+    <Content Include="wwwroot\app\components\student\studentProfile\studentProfile.html" />
+    <Content Include="wwwroot\app\config.route.js" />
+    <Content Include="wwwroot\assets\css\bootstrap.css" />
+    <Content Include="wwwroot\assets\css\flexslider.css" />
+    <Content Include="wwwroot\assets\css\lightbox.css" />
+    <Content Include="wwwroot\assets\css\loading-bar.css" />
+    <Content Include="wwwroot\assets\css\prettySticky.css" />
+    <Content Include="wwwroot\assets\css\style.css" />
+    <Content Include="wwwroot\assets\css\toastr.css" />
+    <Content Include="wwwroot\assets\fonts\Abel-Regular.ttf" />
+    <Content Include="wwwroot\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="wwwroot\assets\fonts\OpenSans-Regular.ttf" />
+    <Content Include="wwwroot\assets\images\a.jpg" />
+    <Content Include="wwwroot\assets\images\close.png" />
+    <Content Include="wwwroot\assets\images\f1.jpg" />
+    <Content Include="wwwroot\assets\images\f2.jpg" />
+    <Content Include="wwwroot\assets\images\f3.jpg" />
+    <Content Include="wwwroot\assets\images\g1.jpg" />
+    <Content Include="wwwroot\assets\images\g2.jpg" />
+    <Content Include="wwwroot\assets\images\g3.jpg" />
+    <Content Include="wwwroot\assets\images\g4.jpg" />
+    <Content Include="wwwroot\assets\images\g5.jpg" />
+    <Content Include="wwwroot\assets\images\g6.jpg" />
+    <Content Include="wwwroot\assets\images\g7.jpg" />
+    <Content Include="wwwroot\assets\images\g8.jpg" />
+    <Content Include="wwwroot\assets\images\icon2.png" />
+    <Content Include="wwwroot\assets\images\icons.png" />
+    <Content Include="wwwroot\assets\images\img1.jpg" />
+    <Content Include="wwwroot\assets\images\img2.jpg" />
+    <Content Include="wwwroot\assets\images\llpicview.jpg" />
+    <Content Include="wwwroot\assets\images\next.png" />
+    <Content Include="wwwroot\assets\images\prev.png" />
+    <Content Include="wwwroot\assets\images\quote.png" />
+    <Content Include="wwwroot\assets\images\slid.jpg" />
+    <Content Include="wwwroot\assets\images\t1.jpg" />
+    <Content Include="wwwroot\assets\images\t2.jpg" />
+    <Content Include="wwwroot\assets\images\t3.jpg" />
+    <Content Include="wwwroot\assets\images\t4.jpg" />
+    <Content Include="wwwroot\assets\js\ai.0.15.0-build58334.js" />
+    <Content Include="wwwroot\assets\js\ai.0.15.0-build58334.min.js" />
+    <Content Include="wwwroot\assets\js\angular-animate.js" />
+    <Content Include="wwwroot\assets\js\angular-aria.js" />
+    <Content Include="wwwroot\assets\js\angular-local-storage.min.js" />
+    <Content Include="wwwroot\assets\js\angular-material.js" />
+    <Content Include="wwwroot\assets\js\angular-messages.js" />
+    <Content Include="wwwroot\assets\js\angular-mocks.js" />
+    <Content Include="wwwroot\assets\js\angular-moment.min.js" />
+    <Content Include="wwwroot\assets\js\angular-route.js" />
+    <Content Include="wwwroot\assets\js\angular-toastr.tpls.min.js" />
+    <Content Include="wwwroot\assets\js\angular-ui-router.js" />
+    <Content Include="wwwroot\assets\js\angular.js" />
+    <Content Include="wwwroot\assets\js\angularJwt.js" />
+    <Content Include="wwwroot\assets\js\base64.js" />
+    <Content Include="wwwroot\assets\js\bootstrap.js" />
+    <Content Include="wwwroot\assets\js\counterup.min.js" />
+    <Content Include="wwwroot\assets\js\hubs.js" />
+    <Content Include="wwwroot\assets\js\interceptor.js" />
+    <Content Include="wwwroot\assets\js\jquery-1.10.2.js" />
+    <Content Include="wwwroot\assets\js\jquery-1.10.2.min.js" />
+    <Content Include="wwwroot\assets\js\jquery-1.10.2.min.map" />
+    <Content Include="wwwroot\assets\js\jquery-1.11.1.min.js" />
+    <Content Include="wwwroot\assets\js\jquery-2.1.4.min.js" />
+    <Content Include="wwwroot\assets\js\jquery.flexisel.js" />
+    <Content Include="wwwroot\assets\js\jquery.flexslider.js" />
+    <Content Include="wwwroot\assets\js\jquery.signalR-2.1.2.js" />
+    <Content Include="wwwroot\assets\js\jquery.signalR-2.1.2.min.js" />
+    <Content Include="wwwroot\assets\js\jwt.js" />
+    <Content Include="wwwroot\assets\js\lightbox-plus-jquery.min.js" />
+    <Content Include="wwwroot\assets\js\loading-bar.js" />
+    <Content Include="wwwroot\assets\js\material-menu-sidenav.js" />
+    <Content Include="wwwroot\assets\js\md-data-table.js" />
+    <Content Include="wwwroot\assets\js\modernizr.custom.js" />
+    <Content Include="wwwroot\assets\js\moment.min.js" />
+    <Content Include="wwwroot\assets\js\ngStorage.min.js" />
+    <Content Include="wwwroot\assets\js\prettySticky.js" />
+    <Content Include="wwwroot\assets\js\responsiveslides.min.js" />
+    <Content Include="wwwroot\assets\js\scripts.js" />
+    <Content Include="wwwroot\assets\js\smoothbox.jquery2.js" />
+    <Content Include="wwwroot\assets\js\waypoints.min.js" />
+    <Content Include="wwwroot\index.controller.js" />
+    <Content Include="wwwroot\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
+    <PackageReference Include="NETCore.MailKit" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\js\jquery-1.10.2.intellisense.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\web ref\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

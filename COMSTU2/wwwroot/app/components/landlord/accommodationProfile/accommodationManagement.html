@@ -1,0 +1,61 @@
+﻿<div class="contact">
+    <div class="container">
+        <div class="contact-grids">
+            <div class="col-md-6 contact-grid">
+                <h3 class="title">Register Accommodation</h3>
+                <!--<p>Complete the short form below & we will contact you with availability.</p>-->
+                <p></p>
+                <form>
+
+
+                    <select class="typeSelect" name="sign" ng-model="vm.city" ng-change="vm.selectedCity(vm.city)">
+                        <option value="">Search By City</option>
+                        <option value="Johannesburg">Johannesburg</option>
+                        <option value="Vanderbijlpark">Vanderbijlpark</option>
+                        <option value="Braamfontein">Braamfontein</option>
+                        <option value="Limpopo">Limpopo</option>
+                    </select>
+
+                    <select class="typeSelect" name="sign" ng-model="vm.houseType" ng-change="vm.selectedHouseType(vm.houseType)">
+                        <option value="">Search By House Type</option>
+                        <option value="House">House</option>
+                        <option value="Flat">Flat</option>
+                        <option value="TownHouse">Town House</option>
+                        <option value="Cottage">Cottage</option>
+                        <option value="SingleRoom">Single Room</option>
+                        <option value="DoubleRoom">Double Room</option>
+                        <option value="TrippleRoom">Tripple Room</option>
+                    </select>
+
+                    <select class="typeSelect" name="sign" ng-model="vm.isActive" ng-change="vm.selectedMakeActive(vm.isActive)">
+                        <option value="">Make active now</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+
+                    <div>
+                        <input type="text" ng-model="vm.acc.address" required="" placeholder="Address">
+                        <input type="text" ng-model="vm.acc.price" required="" placeholder="Price">
+                    </div>
+
+                    <div>
+                        <input type="file" ng-model="vm.acc.part.file" id="file" name="file" accept="image/*" />
+                        <!--<input type="file" ng-model="acc.picture1" id="file2" name="file2" accept="image/*">
+                        <input type="file" ng-model="acc.picture2" id="file3" name="file3"accept="image/*">
+                        <input type="file" ng-model="acc.picture3" id="file4" name="file4" accept="image/*">-->
+                        <textarea type="text" ng-model="vm.acc.comment" placeholder="comment">Comment...</textarea>
+
+                    </div>
+                    <input type="submit" ng-click="vm.createAcc(vm.acc)" value="Add Accommodation" ng-disabled="vm.isClicked">
+                </form>
+            </div>
+            <div class="col-md-6 contact-grid">
+                <img src="assets/images/llpicview.jpg" />
+                <br /><br />
+                <h3 style="font-size:2em;color:#745EC5;font-family: 'Abel-Regular';">Please upload a high quality picture.</h3>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>

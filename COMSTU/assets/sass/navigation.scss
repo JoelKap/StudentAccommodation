@@ -1,0 +1,142 @@
+﻿md-menu-sidenav-title {
+    padding: 0px 12px 0px 13px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        
+        background-color: $ci-red;
+        h1{
+            transition: all 0.1s ease-in-out;
+            color: $ci-white;
+            span{               
+                .material-icons{
+                    color: $ci-white;
+                }
+            }
+        }
+        .material-icons{
+            color: $ci-white;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+    h1{
+        color:$dark-gray;
+        span{
+            margin-right: 8px;
+                
+            .material-icons{
+                font-size: 120%;
+                line-height: 15px;
+                color:$gray;
+            }
+        }
+    }
+}
+
+md-menu-sidenav-item h1 {
+    font-size: 15px;
+    color: #616161;
+}
+
+md-menu-sidenav-item .icon {
+    margin-right: 12px;
+    color: #616161;
+}
+
+md-menu-sidenav-item a {
+    text-decoration: none;
+}
+
+md-menu-sidenav-subitem {
+    cursor: pointer;
+    font-size: 14px;
+    color: #414141;
+    padding: 8px 1px 8px 1px;
+    background-color: rgba(239,65,65,0.0);
+
+    &:focus{
+        color: $ci-white;
+        background-color: $ci-red;
+        outline: none;
+    }
+    &:hover{
+        color: $ci-white;
+        background-color: $ci-red;
+    }
+}
+
+md-menu-sidenav-content {
+    background: #fff;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: .6s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    -webkit-transition-property: max-height;
+    -moz-transition: .6s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    -moz-transition-property: max-height;
+    transition: .6s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    transition-delay: inherit;
+    transition-timing-function: inherit;
+    transition-property: max-height;
+}
+
+md-sidenav.md-locked-open {
+    width: 270px;
+    min-width: 270px;
+    max-width: 270px;
+}
+.profile-area{
+    border-bottom: 1px solid #E6E7E8;
+    min-height: 159px;
+    max-height: 159px;
+    height: 159px;
+    > div {
+        position:relative;
+        div{
+            right: 10px;
+            bottom: 8px;
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            border: 3px solid #fff;
+            background-color: green;
+            border-radius:50%
+        }
+    }
+    img{
+        border-radius: 50%;
+        height: 60px;
+        margin-right:10px;
+    }
+    p{
+        font-size: 90%;
+        color: rgba(6,21,86,1.0);
+        &:hover{
+            cursor: pointer;
+        }
+        span{
+            md-icon{
+                color: rgba(6,21,86,1.0);
+                font-size: 125%;
+                line-height: 16px;
+            }  
+        }
+    }
+}
+
+.md-sidenav-active {
+
+    > div{
+        &:focus{
+            outline: none;
+        }
+        background-color: $ci-red;
+        h1{
+            color: $ci-white;
+            md-icon{
+                color: $ci-white;
+            }
+        }
+    }
+}

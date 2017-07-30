@@ -1,0 +1,332 @@
+﻿<dir-page-header heading="vm.heading"
+                 icon="vm.icon">
+</dir-page-header>
+
+<md-content class="main-content md-padding page-content transparent md-fade-in">
+    <form name="vm.userForm">     
+
+        <md-content class="box-shadow margin-bottom-32" ng-if="vm.model.isUserEdit">
+            <md-tabs md-dynamic-height class="md-tabs-custom-heading">
+                <md-tab label="Edit User">
+                    <md-content class="md-padding">
+                            <div flex layout-gt-md="row" layout="column">
+
+                                <md-input-container flex class="md-block">
+                                    <label> Name </label>
+                                    <input type="text" ng-model="vm.user.name" required name="name" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                                    <div ng-messages="vm.userForm.name.$error" ng-if="vm.userForm.name.$dirty">
+                                        <div ng-message="required">The field above is required</div>
+                                        <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                                    </div>
+                                </md-input-container>
+
+                                <div flex="5" hide-md></div><!-- gutter -->
+
+                                <md-input-container flex class="md-block">
+                                    <label> Email Address </label>
+                                    <input type="text" ng-model="vm.user.email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                                    <div ng-messages="vm.userForm.email.$error" ng-if="vm.userForm.email.$dirty">
+                                        <div ng-message="required">The field above is required</div>
+                                        <div ng-message-exp="['pattern']">Please enter valid email address</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div flex layout-gt-md="row" layout="column">
+
+                                <md-input-container flex class="md-block">
+                                    <label> Surname </label>
+                                    <input type="text" ng-model="vm.user.surname" required name="surname" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                                    <div ng-messages="vm.userForm.surname.$error" ng-if="vm.userForm.surname.$dirty">
+                                        <div ng-message="required">The field above is required</div>
+                                        <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                                    </div>
+                                </md-input-container>
+
+                                <div flex="5" hide-md></div><!-- gutter -->
+
+                                <md-input-container flex class="md-block">
+                                    <label> Alternative Email Address </label>
+                                    <input type="text" ng-model="vm.user.additionalEmail" name="additionalEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                                    <div ng-messages="vm.userForm.additionalEmail.$error" ng-if="vm.userForm.additionalEmail.$dirty">
+                                        <div ng-message="required">The field above is required</div>
+                                        <div ng-message-exp="['pattern']">Please enter valid email address</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div flex layout-gt-md="row" layout="column">
+
+                                <md-input-container flex class="md-block">
+                                    <label> Username (Email Address) </label>
+                                    <input type="text" ng-disabled="vm.model.isUserEdit" ng-model="vm.user.username" required name="username" />  
+                                </md-input-container>
+
+                                <div flex="5" hide-md></div><!-- gutter -->
+
+                                <md-input-container flex class="md-block">
+                                    <label> Cell Phone Number </label>
+                                    <input type="text" pattern="\d*" ng-model="vm.user.cellNumber" required name="cellNumber" />
+                                    <div ng-messages="vm.userForm.cellNumber.$error" ng-if="vm.userForm.cellNumber.$dirty">
+                                        <div ng-message="required">The field above is required</div>
+                                        <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div flex layout-gt-md="row" layout="column">
+
+                                <md-input-container flex class="md-block">
+                                    <label> ID Number / Passport Number </label>
+                                    <input type="text" ng-model="vm.user.idNumber" required name="idNumber" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                                    <div ng-messages="vm.userForm.idNumber.$error" ng-if="vm.userForm.idNumber.$dirty">
+                                        <div ng-message="required">The field above is required</div>
+                                        <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                                    </div>
+                                </md-input-container>
+
+                                <div flex="5" hide-md></div><!-- gutter -->
+
+                                <md-input-container flex class="dropdown-alignment md-block">
+                                    <label> Status </label>
+                                    <md-select ng-model="vm.user.status" required name="status" aria-label="Select Status">
+                                        <md-option ng-value=true>
+                                            <md-select-label>Active</md-select-label>
+                                        </md-option>
+                                        <md-option ng-value=false>
+                                            <md-select-label>Inactive</md-select-label>
+                                        </md-option>
+                                    </md-select>
+                                    <div ng-messages="vm.userForm.status.$error" ng-if="vm.userForm.status.$dirty">
+                                        <div ng-message="required">Please select status</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div layout="row"  ng-if="vm.model.isUserEdit">
+                                <div flex layout="row" layout-align="start center" class="md-toolbar-switch">
+                                    <div flex layout="row">
+                                        <label>Locked Out</label>
+                                    </div>
+                                    <div flex layout="row" layout-align="end center">
+                                        <md-switch class="md-primary no-margin" aria-label="switch" ng-model="vm.user.locked"></md-switch>
+                                        <p ng-if="vm.user.locked == false">No</p>
+                                        <p ng-if="vm.user.locked == true">Yes</p>
+                                    </div>
+                                </div>
+                                <div flex="5" hide-md></div><!-- gutter -->
+                                <div layout="row" flex layout-align="end end">
+                                    <md-button class="md-raised md-default" ng-click="vm.resetPassword(vm.user)">Reset Password</md-button>
+                                    <md-button class="md-raised md-default" ng-click="vm.sendUserDetails(vm.user)" ng-if="vm.model.isUserEdit">Send User Details</md-button>
+                                    
+                                </div>
+                            </div>
+                        </md-content>
+                </md-tab>
+                <md-tab label="User Activity">
+                    <md-content class="md-padding">
+                        <div layout-gt-md="row" layout-md="column">
+                            <div flex="50">
+                                <div class="md-output-row" layout="row">
+                                    <div flex>
+                                        <p>Last login date:</p>
+                                    </div>
+                                    <div flex>
+                                        <p>{{vm.user.lastLoginDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="md-output-row" layout="row">
+                                    <div flex>
+                                        <p>Lact Active:</p>
+                                    </div>
+                                    <div flex>
+                                        <p>{{vm.user.lastActiveDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="md-output-row" layout="row">
+                                    <div flex>
+                                        <p>Last password changed:</p>
+                                    </div>
+                                    <div flex>
+                                        <p>{{vm.user.lastPasswordChangedDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="md-output-row" layout="row">
+                                    <div flex>
+                                        <p>Last lockout date:</p>
+                                    </div>
+                                    <div flex>
+                                        <p>{{vm.user.lastLockoutDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="md-output-row" layout="row">
+                                    <div flex>
+                                        <p>Last updated date:</p>
+                                    </div>
+                                    <div flex>
+                                        <p>{{vm.user.lastUpdatedDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+
+        <md-content class="box-shadow margin-bottom-32" ng-if="!vm.model.isUserEdit">
+            <md-toolbar layout="row" class="md-toolbar-content-header">
+                <div flex class="md-toolbar-tools" layout="row">                  
+                    <h2 flex>Create <strong>New User</strong></h2>
+                </div>  
+            </md-toolbar>
+            <md-content class="md-padding">
+                <div >
+                    <div flex layout-gt-md="row" layout="column">
+
+                        <md-input-container flex class="md-block">
+                            <label> Name </label>
+                            <input type="text" ng-model="vm.user.name" required name="name" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                            <div ng-messages="vm.userForm.name.$error" ng-if="vm.userForm.name.$dirty || vm.formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            </div>
+                        </md-input-container>
+
+                        <div flex="5" hide-md></div><!-- gutter -->
+
+                        <md-input-container flex  class="md-block">
+                            <label> Email Address </label>
+                            <input type="text" ng-model="vm.user.email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                            <div ng-messages="vm.userForm.email.$error" ng-if="vm.userForm.email.$dirty || vm.formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">Please enter valid email address</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex layout-gt-md="row" layout="column">
+
+                        <md-input-container flex  class="md-block">
+                            <label> Surname </label>
+                            <input type="text" ng-model="vm.user.surname" required name="surname" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                            <div ng-messages="vm.userForm.surname.$error" ng-if="vm.userForm.surname.$dirty || vm.formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            </div>
+                        </md-input-container>
+
+                        <div flex="5" hide-md></div><!-- gutter -->
+
+                        <md-input-container flex  class="md-block">
+                            <label> Alternative Email Address </label>
+                            <input type="text" ng-model="vm.user.additionalEmail" name="additionalEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                            <div ng-messages="vm.userForm.additionalEmail.$error" ng-if="vm.userForm.additionalEmail.$dirty || vm.formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">Please enter valid email address</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex layout-gt-md="row" layout="column">
+
+                        <md-input-container flex class="md-block">
+                            <label> Username (Email Address) </label>
+                            <input type="text" ng-model="vm.user.username" ng-blur="vm.checkUniqueUsername(vm.user.username)" required name="username" />
+                            <div ng-messages="vm.userForm.username.$error" ng-if="vm.userForm.username.$dirty || vm.usernameExixt || vm.formSubmitted">
+                                <div ng-if="vm.model.usernameExixt">This username already exists</div>
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            </div>
+
+                        </md-input-container>
+
+                        <div flex="5" hide-md></div><!-- gutter -->
+
+                        <md-input-container flex  class="md-block">
+                            <label> Cell Phone Number </label>
+                            <input type="text" pattern="\d*" ng-model="vm.user.cellNumber" required name="cellNumber" />
+                            <div ng-messages="vm.userForm.cellNumber.$error" ng-if="vm.userForm.cellNumber.$dirty || vm.formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex layout-gt-md="row" layout="column">
+
+                        <md-input-container flex  class="md-block">
+                            <label> ID Number / Passport Number </label>
+                            <input type="text" ng-model="vm.user.idNumber" required name="idNumber" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                            <div ng-messages="vm.userForm.idNumber.$error" ng-if="vm.userForm.idNumber.$dirty || vm.formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                            </div>
+                        </md-input-container>
+
+                        <div flex="5" hide-md></div><!-- gutter -->
+
+                        <md-input-container flex class="dropdown-alignment md-block">
+                            <label> Status </label>
+                            <md-select ng-model="vm.user.status" required name="status">
+                                <md-option ng-value=true>
+                                    <md-select-label>Active</md-select-label>
+                                </md-option>
+                                <md-option ng-value=false>
+                                    <md-select-label>Inactive</md-select-label>
+                                </md-option>
+                            </md-select>
+                            <div ng-messages="vm.userForm.status.$error" ng-if="vm.userForm.status.$dirty || vm.formSubmitted">
+                                <div ng-message="required">Please select status</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </md-content>
+        </md-content>
+
+
+        <md-content class="box-shadow margin-bottom-32 ">
+            <md-toolbar class="md-toolbar-content-header">
+                <div class="md-toolbar-tools padding-right-0">
+                    <div flex layout="row">
+                        <h2> Link <strong>Application</strong></h2>
+                    </div>
+                    <div flex layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" aria-label="Add" ng-click="vm.linkApplication(vm.user)">
+                            <md-icon md-font-icon="material-icons" class="md-font material-icons">add</md-icon>
+                        </md-button>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-data-table-container>
+                <table md-data-table md-progress="deferred"><!--ng-if="vm.user.applications.lenth < 0"-->
+                    <thead>
+                        <tr>
+                            <th name="Application Name"></th>
+                            <th name="Acronym"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="application in vm.user.applications" class="hover">
+                            <td><span>{{application.Name}}</span></td>
+                            <td><span>{{application.Accronym}}</span></td>
+                            <td class="md-table-button">
+                                <md-button class="md-icon-button" ng-click="vm.editApplication(vm.user,$index)" aria-label="Edit">
+                                    <md-icon md-font-icon="material-icons" class="md-font material-icons">edit</md-icon>
+                                </md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+            <div layout="row" class="md-padding">
+                <div flex="50" layout="column" layout-align="start start">
+                    <md-button class="md-raised md-default" ng-click="vm.cancel()">Cancel</md-button>
+                </div>
+                <div flex="50" layout="row" layout-align="end end">
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="vm.model.usernameExixt" ng-if="!vm.model.isUserEdit" ng-click="vm.addUser(vm.user)">Create</md-button>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="vm.model.usernameExixt" ng-if="vm.model.isUserEdit" ng-click="vm.editUser(vm.user)">Save</md-button>
+                </div>
+            </div>
+        </md-content>
+    </form>
+</md-content>

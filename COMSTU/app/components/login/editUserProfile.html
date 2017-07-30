@@ -1,0 +1,114 @@
+﻿<md-dialog ng-cloak class="large">
+    <md-toolbar class="color-blue md-title-header-bar" style="width:100%!important">
+        <div class="md-toolbar-tools">
+            <h2>Edit Profile</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeModal()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div> 
+    </md-toolbar>
+    <md-content class="md-padding">
+        <form name="captureUpdateProfile" data-ng-init="loadedUpdateProfile()">
+            <div layout-gt-md="row" layout-md="column">
+                <div flex>
+
+                    <md-input-container flex class="dropdown-alignment">
+                        <label>Select Package</label>
+                        <md-select ng-model="package" ng-init="package = packages[0]" required name="accounts" ng-change="selectedPackage(package)">
+                            <md-option ng-value="package.name" ng-repeat="package in packages">
+                                {{package.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <!-- Left Col -->
+                    <md-input-container class="md-block">
+                        <label>First Name</label>
+                        <input ng-model="userEdit.firstname" required name="firstname" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                        <div ng-messages="captureUpdateProfile.firstname.$error" ng-if="captureUpdateProfile.firstname.$dirty || formSubmitted">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Last Name</label>
+                        <input ng-model="userEdit.lastname" required name="lastname" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+                        <div ng-messages="captureUpdateProfile.lastname.$error" ng-if="captureUpdateProfile.lastname.$dirty || formSubmitted">
+                            <div ng-message="required">The field above is required</div>
+                            <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Username</label>
+                        <input ng-model="userEdit.username" type="text" required name="username" readonly="readonly"  />
+                        <div ng-messages="captureUpdateProfile.username.$error" ng-if="captureUpdateProfile.username.$dirty || formSubmitted">
+                            <div ng-message="required">The field above is required</div>
+                        </div>
+                    </md-input-container>
+
+
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <input ng-model="userEdit.email" type="text" required name="email" readonly="readonly" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+                        <div ng-messages="captureUpdateProfile.email.$error" ng-if="captureUpdateProfile.email.$dirty || formSubmitted">
+                            <div ng-message="required">The field above is required</div>
+                            <!--<div ng-message-exp="['pattern']">You cannot capture special characters</div>-->
+                        </div>
+                    </md-input-container>
+
+
+
+                    <div flex>
+                        <!-- Right Col -->
+
+
+                    </div>
+                    <div flex="5" hide-md></div>
+
+                </div>
+                <div flex="5" hide-md></div><!-- gutter -->
+                <div flex>
+                    <!-- gutter -->
+
+                    <md-input-container class="md-block">
+                        <label>Id Number</label>
+                        <input ng-model="userEdit.IdNumber" type="text" required name="idNumber" max="13" />
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Cell Number</label>
+                        <input ng-model="userEdit.cellNumber" type="text" name="cellnumber" max="10" />
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Telephone Number</label>
+                        <input ng-model="userEdit.telephone" type="text" name="telephone" max="10" />
+                    </md-input-container>
+
+
+                    <md-input-container flex>
+                        <label>Password</label>
+                        <input type="password" ng-model="userEdit.password"  required name="password"/>
+                        <div ng-messages="captureUpdateProfile.password.$error" ng-if="captureUpdateProfile.password.$dirty || formSubmitted">
+                            <div ng-message="required">The field above is required</div>
+                        </div>
+                    </md-input-container>
+
+                </div>
+            </div>
+            <md-content class="md-padding">
+                <div layout="row">
+                    <div flex="50" layout="column" layout-align="start start">
+                        <md-button class="md-raised md-default" ng-click="closeModal()">Cancel</md-button>
+                    </div>
+                    <div flex="50" layout="row" layout-align="end end">
+                        <md-button class="md-primary md-primary-custom" ng-click="updateUserProfile(userEdit)">Update</md-button>
+                    </div>
+                </div>
+            </md-content>
+        </form>
+    </md-content>
+</md-dialog>

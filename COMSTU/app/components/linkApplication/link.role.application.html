@@ -1,0 +1,130 @@
+﻿<dir-page-header heading="vm.pageHeading"
+                 icon="vm.pageHeadingIcon">
+</dir-page-header>
+
+<md-content class="main-content md-padding page-content transparent md-fade-in">
+    <form name="bopInformation">
+        <md-content class="box-shadow margin-bottom-32">
+            <md-toolbar class="md-toolbar-content-header">
+                <div class="md-toolbar-tools">
+                    <div flex="50" layout="row" layout-align="end">
+                        <h2> Select Application </h2>
+                    </div>
+                </div>
+            </md-toolbar>
+            <div layout="row" class="md-padding">
+                <md-input-container flex class="dropdown-alignment md-block">
+                    <label>Select application</label>
+                    <md-select ng-model="vm.selectedApplication" ng-disabled="vm.lockSelectedValue" ng-change="vm.selectedChangedApplication(vm.selectedApplication)" required name="applicationDescription" ng-model-options="{trackBy: '$value.Name'}">
+                        <md-option ng-value="application" ng-repeat="application in vm.applications track by $index">
+                            {{application.Name}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="application.$error" ng-if="application.$dirty || formSubmitted">
+                        <div ng-message="required">Please select an application</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row" class="md-padding" ng-show="vm.selectedApplication === null">
+                <div flex="50" layout="column" layout-align="start start">
+                    <md-button class="md-ripple-visible md-raised md-defult" ng-click=vm.back()>Back</md-button>
+                </div>
+            </div>
+        </md-content>
+
+
+        <!--<div ng-show="vm.selectedApplication != null">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <div flex="50" layout="row" layout-align="start start">
+                        <div class="header-tabs md-toolbar-tools" hide show-gt-sm>
+                            <md-button ng-class="{'md-active' : vm.linkRoles}" ng-click="vm.activeTab('linkRoles')">Roles</md-button>
+                            <md-button ng-class="{'md-active' : vm.linkValues}" ng-click="vm.activeTab('linkValues')">Values</md-button>
+                        </div>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-content class="box-shadow md-padding margin-bottom-32">
+                <div ng-show="vm.linkRoles">
+
+                </div>
+                <div ng-show="vm.linkValues">
+
+                </div>
+            </md-content>
+            <div layout="row" layout-align="end end">
+                <md-button class="md-ripple-visible" ng-click="navigateTo('/viewUsers')">Cancel</md-button>
+                <md-button class="md-raised md-primary" ng-click="vm.Save(vm.selectedApplication)">Save</md-button>
+            </div>
+        </div>-->
+
+
+        <md-content class="box-shadow margin-bottom-32" ng-show="vm.selectedApplication !== null">
+            <md-tabs md-dynamic-height class="md-tabs-custom-heading">
+                <md-tab label="Roles">
+                    <md-content class="md-padding">
+                        <div flex="auto" layout="row">
+                            <div flex layout="row" layout-align="start start" class="margin-bottom-16">
+                                <h3 class="md-island-heding no-margin">Select User Roles</h3>
+                            </div>
+                        </div>
+                        <div layout-gt-md="row" layout-md="column">
+                            <div flex>
+                                <md-data-table-container>
+                                    <table md-data-table md-progress="deferred">
+                                        <thead></thead>
+                                        <tbody>
+                                            <tr ng-repeat="role in vm.selectedApplication.Roles">
+                                                <td ng-bind="role.roleName"></td>
+
+                                                <td ng-if="role.isAssigned" class="md-table-button">
+                                                    <md-switch class="md-primary" aria-label="switch" ng-model="role.isAssigned"></md-switch>
+                                                </td>
+                                                <td ng-if="!role.isAssigned" class="md-table-button">
+                                                    <md-switch class="md-primary" aria-label="switch" ng-model="role.isAssigned"></md-switch>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </md-data-table-container>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Values">
+                    <md-content class="md-padding">
+                        <div>
+                            <div flex layout="row" layout-align="start start" class="margin-bottom-16">
+                                <h3 class="md-island-heding no-margin">Enter Value Details</h3>
+                            </div>
+                        </div>
+                        <div layout-gt-md="row" layout-md="column">
+
+                            <!--<div flex="5" hide-md></div>--><!-- gutter -->
+                            <div flex>
+
+                                <md-input-container ng-repeat="claim in vm.selectedApplication.Claims track by $index" flex">
+                                    <label ng-if="claim.claimName != 'user'">{{claim.claimName}} </label>
+                                    <input type="text" ng-model="claim.claimValue" required name="paymentApprovalLimit" ng-if="claim.claimName != 'user'" />
+                                </md-input-container>
+
+                                <md-input-container>
+                                    <label> Linked Individual Name </label>
+                                    <input type="text" ng-model="vm.selectedCust.FirstName" required name="individualName" ng-click="vm.selectInvidividualCustomer()" />
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+            <div layout="row" class="md-padding">
+                <div flex="50" layout="column" layout-align="start start">
+                    <md-button class="md-ripple-visible md-raised md-defult" ng-click=vm.cancel()>Cancel</md-button>
+                </div>
+                <div flex="50" layout="row" layout-align="end end">
+                    <md-button class="md-raised md-primary" ng-click="vm.Save(vm.selectedApplication)">Save</md-button>
+                </div>
+            </div>
+        </md-content>
+    </form>
+</md-content>

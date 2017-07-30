@@ -1,0 +1,19 @@
+﻿<div class="contact">
+        <div class="contact-grids">
+            <div class="contact-grid">
+                <div class="container">
+                    <h3 class="title">Update User Info</h3>
+                </div>
+                <p></p>
+                <form style="padding-left: 20%;padding-right: 25%;">
+                        <input type="text" ng-model="vm.user.name" required="" placeholder="Name">
+                        <input type="text" ng-model="vm.user.surname" required="" placeholder="Surname">
+                        <input type="text" ng-model="vm.user.cellphone" required="" placeholder="Cellphone">
+                        <input type="text" ng-model="vm.user.saId" required="" placeholder="SA ID/Passport">
+                        <input type="text" ng-model="vm.user.caretakerName" required="" placeholder="Care taker name">
+                    <input type="submit" ng-click="vm.updateUserInfo(vm.user)" value="Update" ng-disabled="isClicked">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</div>

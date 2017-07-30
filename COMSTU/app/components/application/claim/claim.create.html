@@ -1,0 +1,43 @@
+﻿<md-dialog style="min-width:50%">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Create Value</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeModal()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content class="md-padding">
+            <form name="createClaim">
+                <div layout="column">
+                    <div flex>
+                        <md-input-container>
+                            <label>Value Name</label>
+                            <input name="claimName" type="text" ng-model="claim.claimName" ng-blur="checkSpaces(claim);checkLowercase(claim);checkUniqueness(claim)" required ng-pattern="/^[_,a-zA-Z0-9\s]*$/" />
+                            <div ng-messages="createClaim.claimName.$error" ng-if="createClaim.claimName.$dirty || formSubmitted">
+                                <div ng-message="required">The field above is required</div>
+                                <div ng-message-exp="['pattern']">You cannot capture special characters</div>
+                                <div ng-if="claimNameIsNotUnique" class="md-message">This Value name already exists</div>
+                                <div ng-if="!claimNameIsLowerCase" class="md-message">The letters in the Value name must all be lowercase</div>
+                                <div ng-if="claimNameHasSpace" class="md-message">The Value name should have no spaces</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div flex layout="row" layout-align="space-between center" class="padding-bottom-0 inline-switch">
+                    <label>Allow multiples</label>
+                    <md-switch class="md-primary no-margin" aria-label="switch" ng-model="claim.allowMultiples" ng-true-value="true" ng-false-value="false"></md-switch>
+                </div>
+                <div layout="row">
+                    <div flex="50" layout="column" layout-align="start start">
+                        <md-button class="md-raised" ng-click="canceld()">Cancel</md-button>
+                    </div>
+                    <div flex="50" layout="row" layout-align="end end">
+                        <md-button class="md-raised md-primary" ng-if="isClaimEdit == false" ng-click="add(claim)">Add Value</md-button>
+                        <md-button class="md-raised md-primary" ng-if="isClaimEdit == true" ng-click="edit(claim)">Update Value</md-button>
+                    </div>
+                </div>
+            </form>
+    </md-dialog-content>
+</md-dialog>

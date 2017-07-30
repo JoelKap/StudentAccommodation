@@ -1,0 +1,39 @@
+﻿<div class="col-md-12 contact-grid">
+    <!--<h3 class="title">Accomodation View and Activate</h3>-->
+    <!--<p>Complete the short form below & we will contact you with availability.</p>-->
+    <br /><br />
+    <table ng-show="vm.accommodations.length > 0" class="table">
+        <thead style="font-weight:bolder">
+            <tr>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Cellphone</td>
+                <td>Accommodation Type</td>
+                <td>Location</td>
+                <td>Care Taker name</td>
+                <td>Created Date</td>
+                <td>Expiry Date</td>
+                <td>is Active</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="acc in vm.accommodations">
+                <td>{{acc.name}}</td>
+                <td>{{acc.surname}}</td>
+                <td>{{acc.cellphone}}</td>
+                <td>{{acc.houseType}}</td>
+                <td>{{acc.location}}</td>
+                <td>{{acc.caretakerName}}</td>
+                <td>{{acc.dateCreated | date: 'dd/MM/yyyy'}}</td>
+                <td>{{acc.dateExpired | date: 'dd/MM/yyyy'}}</td>
+                <td>{{acc.isActive}}</td>
+                <td>
+
+                    <!--<input   type="button" value="Activate" class="button-pipaluk button--inverted" style="font-size: 1em;color: #745EC5;padding: 0.8em 2.5em;margin: 0 auto;position: relative;z-index: 1;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;font-family: 'Abel-Regular'; text-decoration: none;/* display: inline-block; */" ng-click="viewDetails(accommodation)">-->
+
+                    <input type="button" value="Activate" ng-disabled="vm.isClicked" ng-click="vm.activateAccommodation(acc, $index)" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

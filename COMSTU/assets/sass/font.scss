@@ -1,0 +1,56 @@
+﻿//Versatile Heding
+
+
+.md-heading{
+    color: $darker-gray;
+    -webkit-margin-before: 1.0em;
+    -webkit-margin-after: 1.0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    &.no-margin{
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+    &.weight-light{
+        font-weight: 300;
+    }
+    &.weight-normal{
+        font-weight: 400;
+    }
+    &.weight-strong{
+        font-weight: 700;
+    }
+    &.size-sm{
+        font-size: 1.05em;
+    }
+    &.size-md{
+        font-size: 1.17em
+    }
+    &.size-lg{
+        font-size: 1.5em;
+    }
+    &.size-xl{
+        font-size: 2.2em;
+    }
+}
+
+.md-text{
+    &.size-xs{
+        font-size: 0.7em;
+    }
+    &.size-sm{
+        font-size: 0.8em;
+    }
+    &.size-md{
+        font-size: 1.0em;
+    }
+    &.size-lg{
+        font-size: 1.05em;
+    }
+    &.size-xl{
+        font-size: 1.1em;
+    }
+}

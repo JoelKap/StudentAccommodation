@@ -1,0 +1,28 @@
+﻿<div class="contact">
+        <div class="contact-grids">
+            <div class="contact-grid">
+                <div class="container">
+                    <h3 class="title">Register</h3>
+                </div>
+                <br /><br />
+                <form style="padding-left:20%;padding-right: 25%;">
+                    <select class="typeSelect" name="userType" ng-model="vm.userType" ng-change="vm.selectedItem(vm.userType)">
+                        <option value="">Select User Type</option>
+                        <option value="student">student</option>
+                        <option value="landlord">landlord</option>
+                    </select>
+                    <input type="text" ng-model="vm.user.name" onfocus="this.value = '';" required="" placeholder="Name">
+                    <input type="text" ng-model="vm.user.surname" onfocus="this.value = '';" required="" placeholder="Surname">
+                    <input type="text" max="10" ng-model="vm.user.cellphone" onfocus="this.value = '';" required="" placeholder="Cellphone">
+                    <input type="text" ng-model="vm.user.saId" onfocus="this.value = '';" required="" placeholder="SAID/Passport">
+                    <input type="email" ng-model="vm.user.email" onfocus="this.value = '';" required="" placeholder="Email">
+                    <input type="password" ng-model="vm.user.password" onfocus="this.value = '';" required="" placeholder="Password">
+                    <input type="text" ng-model="vm.user.careTakerName" ng-if="vm.isStudent == false && vm.isLandlord == true" onfocus="this.value = '';" placeholder="Care taker fullname">
+                    <input type="text" ng-model="vm.user.instituteName" ng-if="vm.isStudent == true && vm.isLandlord == false" onfocus="this.value = '';" required="" placeholder="Institute Name">
+                    <!--<textarea type="text" onfocus="this.value = '';" required="">Message...</textarea>-->
+                    <input type="submit" ng-if="vm.userType" ng-click="vm.register(vm.user)" value="Register" ng-disabled="vm.isClicked">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</div>

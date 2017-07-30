@@ -1,0 +1,190 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html ng-app="AMApp">
+<head>
+    <title>Comstu | Account Management :: Confident Professionals</title>
+    <!--mobile apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Rental Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--mobile apps-->
+    <!--Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/prettySticky.css" type="text/css">
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!--//end-smoth-scrolling-->
+    <link href="Content/toastr.css" rel="stylesheet" />
+    <script src="Scripts/toastr.js"></script>
+    <link href="assets/css/loading-bar.css" rel="stylesheet" />
+</head>
+<body ng-controller="accountManagementController">
+    <!--banner-->
+    <div id="home" class="banner about-banner">
+        <div class="banner-info">
+            <!--navigation-->
+            <div class="top-nav">
+                <nav>
+                    <div class="container">
+                        <div class="navbar-header logo">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h1><a href="index.html">COMSTU</a></h1>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-right">
+                                <ul class="nav navbar-right">
+                                    <li ng-if="hasAccommodation"><a href="bookAccommodation.html" class="link-kumya"><span data-letters="Book Accommodation">Book Accommodation</span></a></li>
+                                    <li><a href="registrationll.html" class="link-kumya"><span data-letters="Register Landlord">Register Landlord</span></a></li>
+                                    <li><a href="#" class="link-kumya active"><span data-letters="Manage Account">Manage Account</span></a></li>
+                                    <li><a href="editStudentProfile.html" class="link-kumya"><span data-letters="View Profile">View Profile</span></a></li>
+                                    <li><a href="index.html" class="link-kumya"><span data-letters="LogOut">LogOut</span></a></li>
+                                    <li><a><span style="border: 1px solid #021a40;padding: 5px;background-color: navy; color: white;">Welcome &nbsp; {{user.surname}}</span></a></li>
+
+                                </ul>
+                            </ul>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--//navigation-->
+            <div class="banner-text">
+                <h2>WE'LL HELP YOU FIND YOUR PERFECT ACCOMODATION</h2>
+            </div>
+        </div>
+    </div>
+    <!--//banner-->
+    <!-- contact -->
+    <div class="contact">
+        <div class="container">
+            <div class="contact-grids">
+                <!--<div class="col-md-6 contact-grid">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.958900464012!2d36.23097800000001!3d49.993379999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0f009ab9f07%3A0xa21e10f67fa29ce!2sGeorgia+Education+Center!5e0!3m2!1sen!2sin!4v1436943860334" allowfullscreen></iframe>
+                </div>-->
+                <div class="col-md-6 contact-grid">
+                    <h3 class="title">Account Management</h3>
+                    <!--<p>Complete the short form below & we will contact you with availability.</p>-->
+                    <p></p>
+                    <form>
+                        <div>
+                            <h2>Current Balance</h2>
+                            <p>{{accountDetails.amountofAmountOutstanding}}</p>
+
+                            <h3>Number of user Registered so far</h3>
+                            <p>{{accountDetails.numberOfUsersRegistered}}</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- //contact -->
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-4 footer-grids">
+                <h3>Review</h3>
+                <p>I found this website to be very helpful to get accommodations most espeecially during the holidays, It removes the hustle of having to ask friends to find you place or having to cut the holiday short.</p>
+            </div>
+            <div class="col-md-3 footer-grids">
+                <h3>Contact Me</h3>
+                <p>
+                    info@comstu.co.za<br>
+                    <span>Cellphone: +27 83 516 6741</span>
+                </p>
+                <div class="footer-bottom">
+                    <a href="#"><span>Facebook</span></a>
+                    <a href="#"><span>LinkedIn </span></a>
+                </div>
+            </div>
+            <div class="col-md-5 footer-grids">
+                <h3>Meet the Team</h3>
+                <a class="footer-img" href=""> <img src="images/f1.jpg" alt="Manager" /></a>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="footer-copy">
+                <p>© 2017 Comstu. copyright. | Design by <a target="_blank" href="sight.azurewebsites.net">Sbit</a></p>
+            </div>
+        </div>
+    </div>
+    <!--//footer-->
+    <!-- script-for prettySticky -->
+    <script src="js/prettySticky.js"></script>
+    <!--//script-for prettySticky -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
+
+<script src="assets/js/angular.js"></script>
+<script src="assets/js/angularjwt.js"></script>
+<script src="assets/js/interceptor.js"></script>
+<script src="assets/js/jwt.js"></script>
+<script src="assets/js/angular-mocks.js"></script>
+<script src="app/components/blocks/exception/exception.js"></script>
+<script src="app/components/blocks/logger/logger.js"></script>
+<script src="assets/js/base64.js"></script>
+<script src="assets/js/angular-route.js"></script>
+<script src="assets/js/ngstorage.min.js"></script>
+<script src="assets/js/angular-toastr.tpls.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/angular-messages.js"></script>
+<script src="assets/js/md-data-table.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/angular-moment.min.js"></script>
+<script src="assets/js/loading-bar.js"></script>
+
+<!-- Angualr Material -->
+
+<script src="assets/js/angular-ui-router.js"></script>
+<script src="assets/js/angular-animate.js"></script>
+<script src="assets/js/angular-aria.js"></script>
+<script src="assets/js/angular-material.js"></script>
+<script src="assets/js/material-menu-sidenav.js"></script>
+<script src="assets/js/md-data-table.js"></script>
+
+<!--App Config-->
+<script src="app/app.js"></script>
+<script src="app/config.route.js"></script>
+<script src="app/components/mockbackend/application.mockbackend.js"></script>
+
+<!--Directives-->
+<script src="app/components/pageheader/dirpageheader.js"></script>
+
+<!-- Controller -->
+<script src="accountManagement.controller.js"></script>
+
+
+
+<!-- Service -->
+<script src="app/Services/userProfile.service.js"></script>

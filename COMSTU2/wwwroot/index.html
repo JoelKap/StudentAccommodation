@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html ng-app="COMSTU">
+<head>
+    <title>Comstu | Available accomodations :: Confident Professionals</title>
+    <!--mobile apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Rental Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/prettySticky.css" rel="stylesheet" />
+    <link href="assets/css/loading-bar.css" rel="stylesheet" />
+    <link href="assets/css/toastr.css" rel="stylesheet" />
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+
+</head>
+
+
+<body ng-controller="indexController" ng-cloak> 
+    <div id="home" class="banner about-banner">
+        <div class="banner-info">
+            <div class="top-nav">
+                <nav>
+                    <div class="container">
+                        <div class="navbar-header logo">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h1><a href="index.html">COMSTU</a></h1>
+                        </div> 
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-right" style="cursor:pointer">
+                                <li ng-if="!userAuthenticated"><a  ng-click="navigateTo('/home')"><span data-letters="Home">Home</span></a></li>
+                                <li ng-if="!userAuthenticated"><a  ng-click="navigateTo('/register')" ><span data-letters="Register">Register</span></a></li>                               
+                                <li ng-if="isStudent"><a  ng-click="navigateTo('/bookAccommodation')"><span data-letters="Book Accommodation">Book Accommodation</span></a></li>
+                                <li ng-if="isStudent"><a  ng-click="navigateTo('/studentProfile')"><span data-letters="Update Student Profile">Update Student Profile</span></a></li>
+                                <li ng-if="isStudent"><a  ng-click="navigateTo('/studentAccount')"><span data-letters="Student Account">Student Account</span></a></li>
+                                <li ng-if="isStudent"><a  ng-click="navigateTo('/registerLandlord')"><span data-letters="Register Landlord">Register Landlord</span></a></li>
+                                <li ng-if="isLandlord"><a  ng-click="navigateTo('/accommodationManagement')"><span data-letters="Accommodation Management">Accommodation Management</span></a></li>
+                                <li ng-if="isLandlord"><a  ng-click="navigateTo('/landlordProfile')"><span data-letters="Landlord Profile">Landlord Profile</span></a></li>
+                                <li ng-if="isAdmin"><a  ng-click="navigateTo('/adminAccountManagement')"><span data-letters="Admin Account">Admin Account</span></a></li>
+                                <li ng-if="isAdmin"><a  ng-click="navigateTo('/adminActivateAccommodation')"><span data-letters="Activate Accommodation">Activate Accommodation</span></a></li>
+                                <li ng-if="!userAuthenticated"><a  ng-click="navigateTo('/login')"><span data-letters="Login">Login</span></a></li>
+                                <li ng-if="userAuthenticated"><a  ng-click="navigateTo2()"><span data-letters="Logout">Logout</span></a></li>
+                            </ul>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="banner-text">
+                <h2>WE'LL HELP YOU FIND YOUR DREAM HOME</h2>
+            </div>	
+        </div>
+    </div>
+
+    <div ng-view>
+
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-4 footer-grids">
+                <h3>Review</h3>
+                <p>I found this website to be very helpful to get accommodations most espeecially during the holidays, It removes the hustle of having to ask friends to find you place or having to cut the holiday short.</p>
+            </div>
+            <div class="col-md-3 footer-grids">
+                <h3>Contact Me</h3>
+                <p>
+                    info@comstu.co.za<br>
+                    <span>Cellphone: +27 83 516 6741</span>
+                </p>
+                <div class="footer-bottom">
+                    <a href="#"><span>Facebook</span></a>
+                    <a href="#"><span>LinkedIn </span></a>
+                </div>
+            </div>
+            <div class="col-md-5 footer-grids">
+                <h3>Meet the Team</h3>
+                <a class="footer-img" href=""> <img src="assets/images/f1.jpg" alt="Manager" /></a>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="footer-copy">
+                <p>© 2017 Comstu. All rights reserved | Design by <a target="_blank" href="sigh.azurewebsites.net">Sight Business Integrations</a></p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- boostrap -->
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 3
+        $("#slider3").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+
+<!-- libraries -->
+<script src="assets/js/angular.js"></script>
+<script src="assets/js/angularJwt.js"></script>
+<script src="assets/js/angular-route.js"></script>
+<script src="assets/js/angular-ui-router.js"></script>
+<script src="assets/js/angular-local-storage.min.js"></script>
+<script src="assets/js/ngStorage.min.js"></script>
+<script src="assets/js/ai.0.15.0-build58334.js"></script>
+<script src="assets/js/angular-animate.js"></script>
+<script src="assets/js/angular-aria.js"></script>
+
+<script src="assets/js/angular-material.js"></script>
+<script src="assets/js/angular-messages.js"></script>
+<script src="assets/js/angular-mocks.js"></script>
+<script src="assets/js/angular-moment.min.js"></script>
+
+
+<script src="assets/js/base64.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/counterup.min.js"></script>
+<script src="assets/js/interceptor.js"></script>
+<script src="assets/js/jquery.flexisel.js"></script>
+<script src="assets/js/jquery.flexslider.js"></script>
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/jwt.js"></script>
+<script src="assets/js/lightbox-plus-jquery.min.js"></script>
+
+<script src="assets/js/material-menu-sidenav.js"></script>
+<script src="assets/js/md-data-table.js"></script>
+<script src="assets/js/modernizr.custom.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/prettySticky.js"></script>
+<script src="assets/js/responsiveslides.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/smoothbox.jquery2.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/loading-bar.js"></script>
+<script src="assets/js/angular-toastr.tpls.min.js"></script>
+<!-- App Config -->
+<script src="app/app.js"></script>
+<script src="app/config.route.js"></script>
+
+<!-- controllers -->
+<script src="index.controller.js"></script>
+<script src="app/components/home/homeView.controller.js"></script>
+<script src="app/components/home/homeDetail/homeDetail.controller.js"></script>
+<script src="app/common/login/login.controller.js"></script>
+<script src="app/common/paymentSucess/paymentSuccesful.controller.js"></script>
+<script src="app/common/paymentError/paymentError.controller.js"></script>
+<script src="app/components/student/bookAccommodation/bookAccommodation.controller.js"></script>
+<script src="app/components/student/registerlandlord/registerlandlord.controller.js"></script>
+<script src="app/components/student/studentAccount/studentAccount.controller.js"></script>
+<script src="app/components/student/studentProfile/studentProfile.controller.js"></script>
+<script src="app/components/landlord/accommodationProfile/accommodationManagement.controller.js"></script>
+<script src="app/components/landlord/landlordProfile/landlordProfile.controller.js"></script>
+<script src="app/components/admin/adminAccountManagement/adminAccountManagement.controller.js"></script>
+<script src="app/components/admin/adminActivationAccommodation/adminActivation.controller.js"></script>
+<script src="app/components/register/register.controller.js"></script>
+
+
+<!-- services -->
+<script src="app/components/home/homeServices.js"></script>
+<script src="app/common/login/login.service.js"></script>
+<script src="app/components/student/student.service.js"></script>
+<script src="app/components/landlord/landlord.service.js"></script>
+<script src="app/components/admin/admin.service.js"></script>
+<script src="app/components/register/register.service.js"></script>

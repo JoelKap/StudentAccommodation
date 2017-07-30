@@ -1,0 +1,28 @@
+﻿<md-dialog style="min-width: 30%;" class="md-alert-box">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Alert</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content class="md-padding" layout="column">
+        <md-contnet layout="row" layout-align="start center">
+            <md-icon flex="initial" md-font-icon="material-icons" class="md-font material-icons md-alert-box-icon">error</md-icon>
+            <p flex>Are you sure you want to navigate away from this page? All entered information will be lost.</p>
+
+        </md-contnet>
+
+        <div flex layout="row" class="margin-top-16">
+            <div flex="50" layout="column" layout-align="start start">
+                <md-button class="md-raised" ng-click="cancel()">Cancel</md-button>
+            </div>
+            <div flex="50" layout="row" layout-align="end end">
+                <md-button class="md-raised md-primary" ng-click="navigate()">Yes</md-button>
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

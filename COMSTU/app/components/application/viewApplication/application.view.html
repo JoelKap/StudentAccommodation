@@ -1,0 +1,27 @@
+﻿
+<dir-page-header heading="vm.heading"
+                 icon="vm.icon"
+                 show-new-button="true" 
+                 add-new-button-function="vm.addNewApplicaton()">
+</dir-page-header>
+
+<div class="md-padding md-application-cards md-fade-in" layout="row" layout-wrap>
+    <md-card ng-repeat="application in vm.applications" flex style="border-top: 3px solid {{application.color}}" layout-align="center center">
+       <div layout="column" layout-align="center center">
+           <h3 class="no-margin">{{application.Name}}</h3>
+           <p class="no-margin md-font-size-xs">{{application.Accronym}}</p>
+       </div>
+        <div class="md-action">
+            <md-button aria-label="photo" class="md-icon-button" ng-click="vm.editApplication(application)">
+                <md-icon md-font-icon="material-icons">mode_edit</md-icon>
+            </md-button>
+        </div>
+    </md-card>
+    <md-card flex layout-align="center center" class="md-card-placeholder" ng-click="vm.addNewApplicaton()">
+        <div layout="column" layout-align="center center">
+            <h3 class="no-margin"><i class="material-icons">add</i></h3>
+            <p class="no-margin md-font-size-xs">Add New <span>Application</span></p>
+        </div>
+    </md-card>
+</div>
+

@@ -1,0 +1,34 @@
+﻿<div class="contact">
+    <div class="container">
+        <div class="col-md-12 contact-grid">
+            <!--<h3 class="title">Accomodation View and Activate</h3>-->
+            <!--<p>Complete the short form below & we will contact you with availability.</p>-->
+            <br /><br />
+            <table class="table">
+                <thead style="font-weight:bolder">
+                    <tr>
+                        <td>Student Name</td>
+                        <td>Student Surame</td>
+                        <td>Student Cellphone</td>
+                        <td>No Of User registered</td>
+                        <td>Current Balance</td>
+                        <td>Should be paid</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in vm.users">
+                        <td>{{user.name}}</td>
+                        <td>{{user.surname}}</td>
+                        <td>{{user.cellphone}}</td>
+                        <td>{{user.numberOfUserRegistered}}</td>
+                        <td>{{user.balance}}</td>
+                        <td>{{user.shouldBePaid}}</td>
+                        <td ng-if="shouldPayUser">
+                            <input type="button" value="Pay" ng-click="vm.payUser(user)" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
